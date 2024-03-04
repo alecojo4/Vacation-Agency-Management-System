@@ -1,0 +1,25 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Exceptions.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Exceptions.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Exceptions.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "Exceptions.h"
+        -:    6:
+function _ZlsRSoRK19ValidationException called 0 returned 0% blocks executed 0%
+    #####:    7:std::ostream &operator<<(std::ostream &os, const ValidationException &exception) {
+    #####:    8:    os << exception.message;
+    %%%%%:    8-block  0
+call    0 never executed
+    #####:    9:    return os;
+        -:   10:}
+        -:   11:
+function _ZlsRSoRK19RepositoryException called 0 returned 0% blocks executed 0%
+    #####:   12:std::ostream &operator<<(std::ostream &os, const RepositoryException &exception) {
+    #####:   13:    os << exception.message;
+    %%%%%:   13-block  0
+call    0 never executed
+    #####:   14:    return os;
+        -:   15:}

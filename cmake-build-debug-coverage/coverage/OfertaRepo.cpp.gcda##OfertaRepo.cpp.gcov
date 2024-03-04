@@ -1,0 +1,172 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/OfertaRepo.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepo.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepo.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "OfertaRepo.h"
+        -:    6:
+       1*:    7:OfertaRepo::~OfertaRepo() {
+        1:    8:    this->oferte.clear();
+       1*:    9:}
+------------------
+_ZN10OfertaRepoD0Ev:
+function _ZN10OfertaRepoD0Ev called 0 returned 0% blocks executed 0%
+    #####:    7:OfertaRepo::~OfertaRepo() {
+        -:    8:    this->oferte.clear();
+    #####:    9:}
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN10OfertaRepoD2Ev:
+function _ZN10OfertaRepoD2Ev called 1 returned 100% blocks executed 100%
+        1:    7:OfertaRepo::~OfertaRepo() {
+        1:    8:    this->oferte.clear();
+        1:    8-block  0
+call    0 returned 1
+        1:    9:}
+call    0 returned 1
+------------------
+        -:   10:
+function _ZN10OfertaRepo3addERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   11:void OfertaRepo::add(const Oferta &oferta) {
+    #####:   12:    if (this->find(oferta) != -1)
+    %%%%%:   12-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   13:        throw RepositoryException("Oferta deja exista!");
+    %%%%%:   13-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   13-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   13-block  2
+call    9 never executed
+    $$$$$:   13-block  3
+    $$$$$:   13-block  4
+call   10 never executed
+    #####:   14:    this->oferte.push_back(oferta);
+    %%%%%:   14-block  0
+call    0 never executed
+    #####:   15:}
+        -:   16:
+function _ZN10OfertaRepo6removeERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   17:void OfertaRepo::remove(const Oferta &oferta) {
+    #####:   18:    int index = this->find(oferta);
+    %%%%%:   18-block  0
+call    0 never executed
+    #####:   19:    if (index == -1)
+branch  0 never executed
+branch  1 never executed
+    #####:   20:        throw RepositoryException("Oferta nu exista!");
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   20-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   20-block  2
+call    9 never executed
+    $$$$$:   20-block  3
+    $$$$$:   20-block  4
+call   10 never executed
+    #####:   21:    this->oferte.erase(this->oferte.begin() + index);
+    %%%%%:   21-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   21-block  1
+    $$$$$:   21-block  2
+    #####:   22:}
+    %%%%%:   22-block  0
+        -:   23:
+function _ZN10OfertaRepo6updateERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   24:void OfertaRepo::update(const Oferta &oferta) {
+    #####:   25:    int index = this->find(oferta);
+    %%%%%:   25-block  0
+call    0 never executed
+    #####:   26:    if (index == -1)
+branch  0 never executed
+branch  1 never executed
+    #####:   27:        throw RepositoryException("Oferta nu exista!");
+    %%%%%:   27-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   27-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   27-block  2
+call    9 never executed
+    $$$$$:   27-block  3
+    $$$$$:   27-block  4
+call   10 never executed
+    #####:   28:    this->oferte[index] = oferta;
+    %%%%%:   28-block  0
+call    0 never executed
+call    1 never executed
+    #####:   29:}
+        -:   30:
+function _ZNK10OfertaRepo6getAllEv called 0 returned 0% blocks executed 0%
+    #####:   31:const vector<Oferta> &OfertaRepo::getAll() const {
+    #####:   32:    return this->oferte;
+    %%%%%:   32-block  0
+        -:   33:}
+        -:   34:
+function _ZNK10OfertaRepo4sizeEv called 0 returned 0% blocks executed 0%
+    #####:   35:int OfertaRepo::size() const {
+    #####:   36:    return this->oferte.size();
+    %%%%%:   36-block  0
+call    0 never executed
+        -:   37:}
+        -:   38:
+function _ZNK10OfertaRepo9getOfertaEi called 0 returned 0% blocks executed 0%
+    #####:   39:const Oferta &OfertaRepo::getOferta(int index) const {
+    #####:   40:    return this->oferte[index];
+    %%%%%:   40-block  0
+call    0 never executed
+        -:   41:}
+        -:   42:
+function _ZNK10OfertaRepo4findERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   43:int OfertaRepo::find(const Oferta &oferta) const {
+    #####:   44:    for (int i = 0; i < this->oferte.size(); i++) {
+    %%%%%:   44-block  0
+    %%%%%:   44-block  1
+    %%%%%:   44-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   45:        if (this->oferte[i] == oferta)
+    %%%%%:   45-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   46:            return i;
+    %%%%%:   46-block  0
+        -:   47:    }
+    #####:   48:    return -1;
+    %%%%%:   48-block  0
+        -:   49:}

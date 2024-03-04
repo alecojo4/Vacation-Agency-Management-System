@@ -1,0 +1,359 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Oferta.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Oferta.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Oferta.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "Oferta.h"
+        -:    6:#include <vector>
+        -:    7:#include <sstream>
+        -:    8:
+function _ZN6OfertaC2ERKS_ called 28 returned 100% blocks executed 62%
+       28:    9:Oferta::Oferta(const Oferta &oferta) {
+       28:    9-block  0
+call    0 returned 28
+call    1 returned 28
+call    2 returned 28
+       28:   10:    this->denumire = oferta.denumire;
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   11:    this->destinatie = oferta.destinatie;
+       28:   11-block  0
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   12:    this->pret = oferta.pret;
+       28:   13:    this->tip = oferta.tip;
+       28:   13-block  0
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   14:}
+       28:   14-block  0
+    $$$$$:   14-block  1
+call    0 never executed
+    $$$$$:   14-block  2
+call    1 never executed
+    $$$$$:   14-block  3
+call    2 never executed
+        -:   15:
+function _ZN6OfertaaSERKS_ called 0 returned 0% blocks executed 0%
+    #####:   16:Oferta &Oferta::operator=(const Oferta &oferta) {
+    #####:   17:    if (this != &oferta) {
+    %%%%%:   17-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   18:        this->denumire = oferta.denumire;
+    %%%%%:   18-block  0
+call    0 never executed
+    #####:   19:        this->destinatie = oferta.destinatie;
+call    0 never executed
+    #####:   20:        this->pret = oferta.pret;
+    #####:   21:        this->tip = oferta.tip;
+call    0 never executed
+        -:   22:    }
+    #####:   23:    return *this;
+    %%%%%:   23-block  0
+        -:   24:}
+        -:   25:
+function _ZNK6Oferta11getDenumireB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:   26:string Oferta::getDenumire() const {
+        4:   27:    return this->denumire;
+        4:   27-block  0
+call    0 returned 4
+        -:   28:}
+        -:   29:
+function _ZN6Oferta11setDenumireERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   30:void Oferta::setDenumire(const string &ofertaDenumire) {
+    #####:   31:    this->denumire = ofertaDenumire;
+    %%%%%:   31-block  0
+call    0 never executed
+    #####:   32:}
+        -:   33:
+function _ZNK6Oferta13getDestinatieB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   34:string Oferta::getDestinatie() const {
+    #####:   35:    return this->destinatie;
+    %%%%%:   35-block  0
+call    0 never executed
+        -:   36:}
+        -:   37:
+function _ZN6Oferta13setDestinatieERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   38:void Oferta::setDestinatie(const string &destinatie) {
+    #####:   39:    this->destinatie = destinatie;
+    %%%%%:   39-block  0
+call    0 never executed
+    #####:   40:}
+        -:   41:
+function _ZNK6Oferta7getPretEv called 0 returned 0% blocks executed 0%
+    #####:   42:int Oferta::getPret() const {
+    #####:   43:    return this->pret;
+    %%%%%:   43-block  0
+        -:   44:}
+        -:   45:
+function _ZN6Oferta7setPretEi called 0 returned 0% blocks executed 0%
+    #####:   46:void Oferta::setPret(int ofertaPret) {
+    #####:   47:    this->pret = ofertaPret;
+    #####:   48:}
+        -:   49:
+function _ZNK6Oferta6getTipB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   50:string Oferta::getTip() const {
+    #####:   51:    return this->tip;
+    %%%%%:   51-block  0
+call    0 never executed
+        -:   52:}
+        -:   53:
+function _ZN6Oferta6setTipERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   54:void Oferta::setTip(const string &ofertaTip) {
+    #####:   55:    this->tip = ofertaTip;
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:}
+        -:   57:
+function _ZNK6OfertaeqERKS_ called 0 returned 0% blocks executed 0%
+    #####:   58:bool Oferta::operator==(const Oferta &rhs) const {
+    #####:   59:    return this->denumire == rhs.denumire;
+    %%%%%:   59-block  0
+call    0 never executed
+        -:   60:}
+        -:   61:
+function _ZN6OfertaC2EOS_ called 1 returned 100% blocks executed 100%
+        1:   62:Oferta::Oferta(Oferta &&oferta) noexcept {
+        1:   62-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:   63:    this->denumire = oferta.denumire;
+call    0 returned 1
+        1:   64:    this->destinatie = oferta.destinatie;
+call    0 returned 1
+        1:   65:    this->pret = oferta.pret;
+        1:   66:    this->tip = oferta.tip;
+call    0 returned 1
+        1:   67:}
+        -:   68:
+function _ZN6OfertaaSEOS_ called 0 returned 0% blocks executed 0%
+    #####:   69:Oferta &Oferta::operator=(Oferta &&oferta) noexcept {
+    #####:   70:    if (this != &oferta) {
+    %%%%%:   70-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   71:        this->denumire = oferta.denumire;
+    %%%%%:   71-block  0
+call    0 never executed
+    #####:   72:        this->destinatie = oferta.destinatie;
+call    0 never executed
+    #####:   73:        this->pret = oferta.pret;
+    #####:   74:        this->tip = oferta.tip;
+call    0 never executed
+        -:   75:    }
+    #####:   76:    return *this;
+    %%%%%:   76-block  0
+        -:   77:}
+        -:   78:
+function _ZNK6OfertaneERKS_ called 0 returned 0% blocks executed 0%
+    #####:   79:bool Oferta::operator!=(const Oferta &rhs) const {
+    #####:   80:    return !(rhs == *this);
+    %%%%%:   80-block  0
+call    0 never executed
+        -:   81:}
+        -:   82:
+function _ZN6Oferta8toStringB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   83:string Oferta::toString() {
+    #####:   84:    return "Oferta : " + this->denumire + " " + this->destinatie + " " + to_string(this->pret) + " " + this->tip;
+    %%%%%:   84-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   84-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   84-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   84-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   84-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   84-block  5
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:   84-block  6
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+    %%%%%:   84-block  7
+call   22 never executed
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+    %%%%%:   84-block  8
+    $$$$$:   84-block  9
+call   29 never executed
+    $$$$$:   84-block 10
+    $$$$$:   84-block 11
+call   30 never executed
+    $$$$$:   84-block 12
+    $$$$$:   84-block 13
+call   31 never executed
+    $$$$$:   84-block 14
+    $$$$$:   84-block 15
+call   32 never executed
+    $$$$$:   84-block 16
+    $$$$$:   84-block 17
+call   33 never executed
+    $$$$$:   84-block 18
+    $$$$$:   84-block 19
+call   34 never executed
+    $$$$$:   84-block 20
+    $$$$$:   84-block 21
+call   35 never executed
+        -:   85:}
+        -:   86:
+function _ZlsRSoRK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   87:ostream &operator<<(ostream &os, const Oferta &oferta) {
+    #####:   88:    os << oferta.denumire << "," << oferta.destinatie << "," << oferta.pret << "," << oferta.tip;
+    %%%%%:   88-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    #####:   89:    return os;
+        -:   90:}
+        -:   91:
+function _ZrsRSiR6Oferta called 0 returned 0% blocks executed 0%
+    #####:   92:istream &operator>>(istream &is, Oferta &oferta) {
+    #####:   93:    string line;
+    %%%%%:   93-block  0
+call    0 never executed
+    #####:   94:    getline(is, line);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   95:
+    #####:   96:    vector<string> tokens;
+    %%%%%:   96-block  0
+call    0 never executed
+    #####:   97:    stringstream ss(line);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   98:    string token;
+    %%%%%:   98-block  0
+call    0 never executed
+    #####:   99:    while (getline(ss, token, ',')) {
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   99-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   99-block  2
+branch  6 never executed
+branch  7 never executed
+    #####:  100:        tokens.push_back(token);
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  101:    }
+        -:  102:
+    #####:  103:    if (tokens.size() != 4) {
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  104:        return is;
+    %%%%%:  104-block  0
+        -:  105:    }
+        -:  106:
+    #####:  107:    oferta.denumire = tokens[0];
+    %%%%%:  107-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  108:    oferta.destinatie = tokens[1];
+    %%%%%:  108-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  109:    oferta.pret = stoi(tokens[2]);
+    %%%%%:  109-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  110:    oferta.tip = tokens[3];
+    %%%%%:  110-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  111:
+    #####:  112:    return is;
+    %%%%%:  112-block  0
+    #####:  113:}
+    %%%%%:  113-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:  113-block  1
+call    4 never executed
+    $$$$$:  113-block  2
+call    5 never executed
+    $$$$$:  113-block  3
+call    6 never executed
+    $$$$$:  113-block  4
+call    7 never executed
+        -:  114:
+function _ZN6OfertaC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 2 returned 100% blocks executed 62%
+        2:  115:Oferta::Oferta(const string &denumire, const string &destinatie, int pret, const string &tip) {
+        2:  115-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        2:  116:    this->denumire = denumire;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  117:    this->destinatie = destinatie;
+        2:  117-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  118:    this->pret = pret;
+        2:  119:    this->tip = tip;
+        2:  119-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  120:}
+        2:  120-block  0
+    $$$$$:  120-block  1
+call    0 never executed
+    $$$$$:  120-block  2
+call    1 never executed
+    $$$$$:  120-block  3
+call    2 never executed

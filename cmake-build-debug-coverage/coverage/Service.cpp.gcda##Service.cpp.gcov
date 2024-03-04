@@ -1,0 +1,1192 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Service.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "Service.h"
+        -:    6:
+        -:    7:#include <algorithm>
+        -:    8:#include <chrono>
+        -:    9:#include <map>
+        -:   10:
+function _ZN7ServiceC2EP7AbsRepoRK9Validator called 1 returned 100% blocks executed 100%
+        1:   11:Service::Service( AbsRepo *repo, const Validator &validator) {
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   12:    this->repo = repo;
+        -:   13:    this->validator = validator;
+        1:   14:}
+        -:   15:
+function _ZN7Service9addOfertaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 0 returned 0% blocks executed 0%
+    #####:   16:void Service::addOferta(const string &denumire, const string &destinatie, int pret, const string &tip) {
+    #####:   17:    Oferta oferta(denumire, destinatie, pret, tip);
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   18:    this->validator.validateOferta(oferta);
+    %%%%%:   18-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:    this->repo->add(oferta);
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:    UndoAdauga* undoAdauga = new UndoAdauga(reinterpret_cast<OfertaRepoFile &>(this->repo), oferta);
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   20-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   20-block  2
+call    6 never executed
+        -:   21:    //unique_ptr este construit cu obiectul undoAdauga ca argument, astfel încât noul obiect adăugat la vector va fi un pointer unic la obiectul undoAdauga.
+        -:   22:    // Acesta este modul în care se asigură că obiectul este eliberat automat din memorie atunci când pointerul unic este distrus,
+        -:   23:    // fără a fi necesară apelarea explicită a funcției delete.
+        -:   24:
+    #####:   25:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoAdauga));
+    %%%%%:   25-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   25-block  1
+call    4 never executed
+    $$$$$:   25-block  2
+call    5 never executed
+    $$$$$:   25-block  3
+    #####:   26:}
+call    0 never executed
+    $$$$$:   26-block  0
+call    1 never executed
+        -:   27://Fucntion to remove an element from the repository
+function _ZN7Service12removeOfertaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 0 returned 0% blocks executed 0%
+    #####:   28:void Service::removeOferta(const string &denumire, const string &destinatie, int pret, const string &tip) {
+    #####:   29:    Oferta oferta(denumire, destinatie, pret, tip);
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:    this->repo->remove(oferta);
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   31:    UndoSterge* undoSterge = new UndoSterge(reinterpret_cast<OfertaRepoFile &>(this->repo), oferta);
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   31-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   31-block  2
+call    6 never executed
+    #####:   32:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoSterge));
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   32-block  1
+call    4 never executed
+    $$$$$:   32-block  2
+call    5 never executed
+    $$$$$:   32-block  3
+    #####:   33:}
+call    0 never executed
+    $$$$$:   33-block  0
+call    1 never executed
+        -:   34:
+function _ZN7Service12updateOfertaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 0 returned 0% blocks executed 0%
+    #####:   35:void Service::updateOferta(const string &denumire, const string &destinatie, int pret, const string &tip) {
+    #####:   36:    Oferta oferta(denumire, destinatie, pret, tip);
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   37:    int index = this->repo->find(oferta);
+    %%%%%:   37-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   38:    Oferta oldOferta;
+    %%%%%:   38-block  0
+call    0 never executed
+    #####:   39:    if (index != -1) {
+branch  0 never executed
+branch  1 never executed
+    #####:   40:        oldOferta = this->repo->getOferta(index);
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   40-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   41:    }
+    #####:   42:    this->validator.validateOferta(oferta);
+    %%%%%:   42-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   43:    this->repo->update(oferta);
+    %%%%%:   43-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   44:    UndoModifica* undoModifica = new UndoModifica(reinterpret_cast<OfertaRepoFile &>(this->repo), oldOferta);
+    %%%%%:   44-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   44-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   44-block  2
+call    6 never executed
+    #####:   45:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoModifica));
+    %%%%%:   45-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   45-block  1
+call    4 never executed
+    $$$$$:   45-block  2
+call    5 never executed
+    $$$$$:   45-block  3
+    #####:   46:}
+call    0 never executed
+call    1 never executed
+    $$$$$:   46-block  0
+call    2 never executed
+    $$$$$:   46-block  1
+call    3 never executed
+        -:   47:
+function _ZNK7Service6getAllEv called 2 returned 100% blocks executed 100%
+        2:   48:const vector<Oferta> &Service::getAll() const {
+        2:   49:    return this->repo->getAll();
+        2:   49-block  0
+call    0 returned 2
+        -:   50:}
+        -:   51:
+function _ZNK7Service4sizeEv called 0 returned 0% blocks executed 0%
+    #####:   52:int Service::size() const {
+    #####:   53:    return this->repo->size();
+    %%%%%:   53-block  0
+call    0 never executed
+        -:   54:}
+        -:   55:
+function _ZNK7Service9getOfertaEi called 0 returned 0% blocks executed 0%
+    #####:   56:const Oferta &Service::getOferta(int index) const {
+    #####:   57:    return this->repo->getOferta(index);
+    %%%%%:   57-block  0
+call    0 never executed
+        -:   58:}
+        -:   59:
+function _ZNK7Service4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   60:int Service::find(const string & denumire) const {
+    #####:   61:    Oferta oferta(denumire, "", 0, "");
+    %%%%%:   61-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   61-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   61-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+call   12 never executed
+call   13 never executed
+    $$$$$:   61-block  3
+    $$$$$:   61-block  4
+    $$$$$:   61-block  5
+    $$$$$:   61-block  6
+    #####:   62:    return this->repo->find(oferta);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   62-block  0
+    %%%%%:   62-block  1
+    #####:   63:}
+    %%%%%:   63-block  0
+call    0 never executed
+    $$$$$:   63-block  1
+call    1 never executed
+        -:   64:
+function _ZN7Service19getOferteByDenumireERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   65:vector<Oferta> Service::getOferteByDenumire(const string& denumire) {
+    #####:   66:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   66-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   67:    vector<Oferta> oferteByDenumire;
+    %%%%%:   67-block  0
+call    0 never executed
+function _ZZN7Service19getOferteByDenumireERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6OfertaE_clESA_ called 0 returned 0% blocks executed 0%
+    #####:   68:    copy_if(oferte.begin(), oferte.end(), back_inserter(oferteByDenumire), [denumire](const Oferta&  oferta) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   68-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   68-block  1
+call    6 never executed
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   68-block  2
+call   11 never executed
+    $$$$$:   68-block  3
+call   12 never executed
+    $$$$$:   68-block  4
+    #####:   69:        return oferta.getDenumire() == denumire;
+    %%%%%:   69-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   70:    });
+    #####:   71:    return oferteByDenumire;
+    %%%%%:   71-block  0
+    #####:   72:}
+    %%%%%:   72-block  0
+call    0 never executed
+    $$$$$:   72-block  1
+call    1 never executed
+    $$$$$:   72-block  2
+call    2 never executed
+        -:   73:
+function _ZN7Service15getOferteByPretEi called 0 returned 0% blocks executed 0%
+    #####:   74:vector<Oferta> Service::getOferteByPret(int pret) {
+    #####:   75:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   75-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   76:    vector<Oferta> oferteByPret;
+    %%%%%:   76-block  0
+call    0 never executed
+function _ZZN7Service15getOferteByPretEiENKUlRK6OfertaE_clES2_ called 0 returned 0% blocks executed 0%
+    #####:   77:    copy_if(oferte.begin(), oferte.end(), back_inserter(oferteByPret), [pret](const Oferta&  oferta) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  0
+call    3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:   78:        return oferta.getPret() == pret;
+    %%%%%:   78-block  0
+call    0 never executed
+        -:   79:    });
+    #####:   80:    return oferteByPret;
+    %%%%%:   80-block  0
+    %%%%%:   80-block  1
+    #####:   81:}
+    %%%%%:   81-block  0
+call    0 never executed
+    $$$$$:   81-block  1
+call    1 never executed
+    $$$$$:   81-block  2
+call    2 never executed
+        -:   82:
+function _ZN7Service20sortOferteByDenumireEb called 0 returned 0% blocks executed 0%
+    #####:   83:vector<Oferta> Service::sortOferteByDenumire(bool ascending) {
+    #####:   84:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:   84-block  0
+call    0 never executed
+call    1 never executed
+    #####:   85:    if (ascending) {
+branch  0 never executed
+branch  1 never executed
+function _ZZN7Service20sortOferteByDenumireEbENKUlRK6OfertaS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:   86:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:   86-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   87:            return oferta1.getDenumire() < oferta2.getDenumire();
+    %%%%%:   87-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   87-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:   87-block  2
+    $$$$$:   87-block  3
+call    7 never executed
+        -:   88:        });
+        -:   89:    } else {
+function _ZZN7Service20sortOferteByDenumireEbENKUlRK6OfertaS2_E0_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:   90:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:   90-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   91:            return oferta1.getDenumire() > oferta2.getDenumire();
+    %%%%%:   91-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   91-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:   91-block  2
+    $$$$$:   91-block  3
+call    7 never executed
+        -:   92:        });
+        -:   93:    }
+    #####:   94:    return oferte;
+    %%%%%:   94-block  0
+    %%%%%:   94-block  1
+    =====:   95:}
+    $$$$$:   95-block  0
+call    0 never executed
+        -:   96:
+function _ZN7Service22sortOferteByDestinatieEb called 0 returned 0% blocks executed 0%
+    #####:   97:vector<Oferta> Service::sortOferteByDestinatie(bool ascending) {
+    #####:   98:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+    #####:   99:    if (ascending) {
+branch  0 never executed
+branch  1 never executed
+function _ZZN7Service22sortOferteByDestinatieEbENKUlRK6OfertaS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  100:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:  100-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  101:            return oferta1.getDestinatie() < oferta2.getDestinatie();
+    %%%%%:  101-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  101-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  101-block  2
+    $$$$$:  101-block  3
+call    7 never executed
+        -:  102:        });
+        -:  103:    } else {
+function _ZZN7Service22sortOferteByDestinatieEbENKUlRK6OfertaS2_E0_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  104:        sort(oferte.begin(), oferte.end(), [](const Oferta& oferta1, const Oferta&  oferta2) {
+    %%%%%:  104-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  105:            return oferta1.getDestinatie() > oferta2.getDestinatie();
+    %%%%%:  105-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  105-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  105-block  2
+    $$$$$:  105-block  3
+call    7 never executed
+        -:  106:        });
+        -:  107:    }
+    #####:  108:    return oferte;
+    %%%%%:  108-block  0
+    %%%%%:  108-block  1
+    =====:  109:}
+    $$$$$:  109-block  0
+call    0 never executed
+        -:  110:
+function _ZN7Service16sortOferteByPretEb called 0 returned 0% blocks executed 0%
+    #####:  111:vector<Oferta> Service::sortOferteByPret(bool ascending) {
+    #####:  112:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:  112-block  0
+call    0 never executed
+call    1 never executed
+    #####:  113:    if (ascending) {
+branch  0 never executed
+branch  1 never executed
+function _ZZN7Service16sortOferteByPretEbENKUlRK6OfertaS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  114:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:  114-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  115:            return oferta1.getPret() < oferta2.getPret();
+    %%%%%:  115-block  0
+call    0 never executed
+call    1 never executed
+        -:  116:        });
+        -:  117:    } else {
+function _ZZN7Service16sortOferteByPretEbENKUlRK6OfertaS2_E0_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  118:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:  118-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  119:            return oferta1.getPret() > oferta2.getPret();
+    %%%%%:  119-block  0
+call    0 never executed
+call    1 never executed
+        -:  120:        });
+        -:  121:    }
+    #####:  122:    return oferte;
+    %%%%%:  122-block  0
+    %%%%%:  122-block  1
+    =====:  123:}
+    $$$$$:  123-block  0
+call    0 never executed
+        -:  124:
+function _ZN7Service15sortOferteByTipEb called 0 returned 0% blocks executed 0%
+    #####:  125:vector<Oferta> Service::sortOferteByTip(bool ascending) {
+    #####:  126:    vector<Oferta> oferte = repo->getAll();
+    %%%%%:  126-block  0
+call    0 never executed
+call    1 never executed
+    #####:  127:    if (ascending) {
+branch  0 never executed
+branch  1 never executed
+function _ZZN7Service15sortOferteByTipEbENKUlRK6OfertaS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  128:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:  128-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  129:            return oferta1.getTip() < oferta2.getTip();
+    %%%%%:  129-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  129-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  129-block  2
+    $$$$$:  129-block  3
+call    7 never executed
+        -:  130:        });
+        -:  131:    } else {
+function _ZZN7Service15sortOferteByTipEbENKUlRK6OfertaS2_E0_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  132:        sort(oferte.begin(), oferte.end(), [](const Oferta&  oferta1, const Oferta&  oferta2) {
+    %%%%%:  132-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  133:            return oferta1.getTip() > oferta2.getTip();
+    %%%%%:  133-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  133-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  133-block  2
+    $$$$$:  133-block  3
+call    7 never executed
+        -:  134:        });
+        -:  135:    }
+    #####:  136:    return oferte;
+    %%%%%:  136-block  0
+    %%%%%:  136-block  1
+    =====:  137:}
+    $$$$$:  137-block  0
+call    0 never executed
+        -:  138:
+function _ZN7Service14addToWatchlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 0 returned 0% blocks executed 0%
+    #####:  139:void Service::addToWatchlist(const string& denumire, const string& destinatie, int pret, const string& tip) {
+    #####:  140:    Oferta oferta(denumire, destinatie, pret, tip);
+    %%%%%:  140-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  141:    validator.validateOferta(oferta);
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  142:    watchlist.add(oferta);
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  143:}
+    %%%%%:  143-block  0
+call    0 never executed
+    $$$$$:  143-block  1
+call    1 never executed
+        -:  144:
+function _ZN7Service19deleteFromWatchlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  145:void Service::deleteFromWatchlist(const string& denumire) {
+    #####:  146:    Oferta oferta =  Oferta(denumire, "", 0, "");
+    %%%%%:  146-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  146-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  146-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+call   12 never executed
+call   13 never executed
+    $$$$$:  146-block  3
+    $$$$$:  146-block  4
+    $$$$$:  146-block  5
+    $$$$$:  146-block  6
+    #####:  147:    watchlist.remove(oferta);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  148:}
+    %%%%%:  148-block  0
+call    0 never executed
+    $$$$$:  148-block  1
+call    1 never executed
+        -:  149:
+function _ZN7Service12getWatchlistEv called 0 returned 0% blocks executed 0%
+    #####:  150:vector<Oferta> Service::getWatchlist() {
+    #####:  151:    return watchlist.getAll();
+    %%%%%:  151-block  0
+call    0 never executed
+call    1 never executed
+        -:  152:}
+        -:  153:
+function _ZN7Service17generateWatchlistEi called 0 returned 0% blocks executed 0%
+    #####:  154:void Service::generateWatchlist(int numberOfOferte) {
+        -:  155:    //Generate numberOfMovies random titles, genre, year and mainActor and add them to the watchlist
+        -:  156:
+    #####:  157:    auto seed = chrono::steady_clock::now().time_since_epoch().count();
+    %%%%%:  157-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  158:    srand(seed);
+call    0 never executed
+        -:  159:
+    #####:  160:    for (int i = 0; i < numberOfOferte; i++) {
+    %%%%%:  160-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  161:        //Generate random titles using seed
+    #####:  162:        string denumire;
+    %%%%%:  162-block  0
+call    0 never executed
+    #####:  163:        int denumireLength = rand() % 20 + 1;
+call    0 never executed
+    #####:  164:        for (int j = 0; j < denumireLength; j++) {
+    %%%%%:  164-block  0
+    %%%%%:  164-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  165:            denumire += (char) (rand() % 26 + 97);
+    %%%%%:  165-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  166:        }
+        -:  167:
+        -:  168:        //Generate random genre
+    #####:  169:        string destinatie;
+    %%%%%:  169-block  0
+call    0 never executed
+    #####:  170:        int destinatieLength = rand() % 20 + 1;
+call    0 never executed
+    #####:  171:        for (int j = 0; j < destinatieLength; j++) {
+    %%%%%:  171-block  0
+    %%%%%:  171-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  172:            destinatie += (char) (rand() % 26 + 97);
+    %%%%%:  172-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  173:        }
+        -:  174:
+        -:  175:        //Generate random year
+    #####:  176:        int pret = rand() % 200 + 1900;
+    %%%%%:  176-block  0
+call    0 never executed
+        -:  177:
+        -:  178:        //Generate random mainActor
+    #####:  179:        string tip;
+call    0 never executed
+    #####:  180:        int tipLength = rand() % 20 + 1;
+call    0 never executed
+    #####:  181:        for (int j = 0; j < tipLength; j++) {
+    %%%%%:  181-block  0
+    %%%%%:  181-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  182:            tip += (char) (rand() % 26 + 97);
+    %%%%%:  182-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  183:        }
+        -:  184:
+    #####:  185:        Oferta oferta(denumire, destinatie, pret, tip);
+    %%%%%:  185-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  186:        watchlist.add(oferta);
+    %%%%%:  186-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  187:    }
+    %%%%%:  187-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:  187-block  1
+call    4 never executed
+    $$$$$:  187-block  2
+call    5 never executed
+    $$$$$:  187-block  3
+call    6 never executed
+    $$$$$:  187-block  4
+call    7 never executed
+        -:  188:
+    #####:  189:}
+    %%%%%:  189-block  0
+        -:  190:
+function _ZN7Service19saveWatchlistToFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  191:void Service::saveWatchlistToFile(const string& filename) {
+    #####:  192:    ofstream file(filename);
+    %%%%%:  192-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  193:    if (!file.is_open()) {
+    %%%%%:  193-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  193-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  194:        throw std::runtime_error("Could not open file");
+    %%%%%:  194-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  194-block  1
+call    4 never executed
+    $$$$$:  194-block  2
+call    5 never executed
+        -:  195:    }
+    #####:  196:    vector<Oferta> oferte = watchlist.getAll();
+    %%%%%:  196-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  196-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  197:    for (const Oferta& oferta : oferte) {
+    %%%%%:  197-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  197-block  1
+call    2 never executed
+    %%%%%:  197-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  198:        file << oferta.getDenumire() << "," << oferta.getDestinatie() << "," << oferta.getPret() << "," << oferta.getTip()<< endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  198-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  198-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  198-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  198-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  198-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  198-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  198-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  198-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  198-block  8
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    %%%%%:  198-block  9
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    %%%%%:  198-block 10
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+    %%%%%:  198-block 11
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+    $$$$$:  198-block 12
+call   40 never executed
+    $$$$$:  198-block 13
+    $$$$$:  198-block 14
+call   41 never executed
+    $$$$$:  198-block 15
+    $$$$$:  198-block 16
+call   42 never executed
+    $$$$$:  198-block 17
+        -:  199:    }
+    #####:  200:    file.close();
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  201:}
+    %%%%%:  201-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  201-block  1
+call    2 never executed
+    $$$$$:  201-block  2
+call    3 never executed
+        -:  202:
+function _ZN7Service6doUndoEv called 0 returned 0% blocks executed 0%
+    #####:  203:void Service::doUndo() {
+    #####:  204:    if (undoActions.empty()) {
+    %%%%%:  204-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  205:        throw std::runtime_error("No more undos");
+    %%%%%:  205-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  205-block  1
+call    4 never executed
+    $$$$$:  205-block  2
+call    5 never executed
+        -:  206:    }
+    #####:  207:    undoActions.back()->undo();
+    %%%%%:  207-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  208:    undoActions.pop_back();
+call    0 never executed
+    #####:  209:}
+        -:  210:
+        -:  211://unordered_map<string,vector<Oferta>> Service::getRaports() {
+        -:  212://    //un map de tip <TIP, OFERTA>
+        -:  213://    unordered_map<string,vector<Oferta>> raports;
+        -:  214://
+        -:  215://    //parcurg toate ofertele din repo
+        -:  216://    for(auto item : repo->getAll()){
+        -:  217://        //verifica daca pentru o oferta din repo oferta.getTip() apare undeva in map ca si cheie
+        -:  218://        if (raports.find(item.getTip()) == raports.end()){//daca nu apare
+        -:  219://            vector<Oferta>temp;//fac un vector cu oferte
+        -:  220://            temp.push_back(item);//adaug oferta in vector
+        -:  221://            auto pereche = pair<string,vector<Oferta>>(item.getTip(),temp);//creez o pereche de tip <tipul gasit, vectorul de mai sus cu oferta>
+        -:  222://            raports.insert(pereche);//am pus-o in map
+        -:  223://        }//daca cheia exista
+        -:  224://        else{
+        -:  225://            raports[item.getTip()].push_back(item);//adaug oferta in vectorul corespunzato cheii tipului gaist
+        -:  226://        }
+        -:  227://    }
+        -:  228://    return raports;
+        -:  229://}
+        -:  230:
+        -:  231:
+function _ZN7Service14getOferteByTipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  232:map<string,vector<Oferta>>Service::getOferteByTip(string tip){
+    #####:  233:    map<string,vector<Oferta>> oferteByTip;
+    %%%%%:  233-block  0
+call    0 never executed
+    #####:  234:    if(tip=="Denumire"){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  235:        vector <Oferta> oferte = repo->getAll();
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  235-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service14getOferteByTipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6OfertaE_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  236:        std::copy_if(oferte.begin(),oferte.end(),oferte.begin(),[tip](const Oferta& oferta){
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  236-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  236-block  2
+call    9 never executed
+    $$$$$:  236-block  3
+call   10 never executed
+    $$$$$:  236-block  4
+    #####:  237:            return oferta.getTip()==tip;
+    %%%%%:  237-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  238:        });
+    #####:  239:        for(const auto& item : oferte){
+call    0 never executed
+call    1 never executed
+    %%%%%:  239-block  0
+call    2 never executed
+    %%%%%:  239-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  240:            oferteByTip[item.getDenumire()].push_back(item);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  240-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  240-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  240-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  240-block  3
+call   11 never executed
+    $$$$$:  240-block  4
+        -:  241:        }
+    #####:  242:    }
+    %%%%%:  242-block  0
+call    0 never executed
+    $$$$$:  242-block  1
+call    1 never executed
+    #####:  243:    if(tip=="Destinatie"){
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:        vector <Oferta> oferte = repo->getAll();
+    %%%%%:  244-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  244-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service14getOferteByTipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6OfertaE0_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  245:        std::copy_if(oferte.begin(),oferte.end(),oferte.begin(),[tip](const Oferta& oferta){
+    %%%%%:  245-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  245-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  245-block  2
+call    9 never executed
+    $$$$$:  245-block  3
+call   10 never executed
+    $$$$$:  245-block  4
+    #####:  246:            return oferta.getTip()==tip;
+    %%%%%:  246-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  247:        });
+    #####:  248:        for(const auto& item : oferte){
+call    0 never executed
+call    1 never executed
+    %%%%%:  248-block  0
+call    2 never executed
+    %%%%%:  248-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  249:            oferteByTip[item.getDestinatie()].push_back(item);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  249-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  249-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  249-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  249-block  3
+call   11 never executed
+    $$$$$:  249-block  4
+        -:  250:        }
+    #####:  251:    }
+    %%%%%:  251-block  0
+call    0 never executed
+    $$$$$:  251-block  1
+call    1 never executed
+    #####:  252:    if(tip=="Pret"){
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  253:        vector <Oferta> oferte = repo->getAll();
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  253-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service14getOferteByTipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6OfertaE1_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  254:        std::copy_if(oferte.begin(),oferte.end(),oferte.begin(),[tip](const Oferta& oferta){
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  254-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  254-block  2
+call    9 never executed
+    $$$$$:  254-block  3
+call   10 never executed
+    $$$$$:  254-block  4
+    #####:  255:            return oferta.getTip()==tip;
+    %%%%%:  255-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  256:        });
+    #####:  257:        for(const auto& item : oferte){
+call    0 never executed
+call    1 never executed
+    %%%%%:  257-block  0
+call    2 never executed
+    %%%%%:  257-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  258:            oferteByTip[to_string(item.getPret())].push_back(item);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  258-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  258-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  258-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  258-block  3
+call   12 never executed
+call   13 never executed
+    $$$$$:  258-block  4
+call   14 never executed
+    $$$$$:  258-block  5
+        -:  259:        }
+    #####:  260:    }
+    %%%%%:  260-block  0
+call    0 never executed
+    $$$$$:  260-block  1
+call    1 never executed
+    #####:  261:    if(tip=="Tip"){
+    %%%%%:  261-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  262:        vector <Oferta> oferte = repo->getAll();
+    %%%%%:  262-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  262-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service14getOferteByTipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6OfertaE2_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  263:        std::copy_if(oferte.begin(),oferte.end(),oferte.begin(),[tip](const Oferta& oferta){
+    %%%%%:  263-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  263-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  263-block  2
+call    9 never executed
+    $$$$$:  263-block  3
+call   10 never executed
+    $$$$$:  263-block  4
+    #####:  264:            return oferta.getTip()==tip;
+    %%%%%:  264-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  265:        });
+    #####:  266:        for(const auto& item : oferte){
+call    0 never executed
+call    1 never executed
+    %%%%%:  266-block  0
+call    2 never executed
+    %%%%%:  266-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  267:            oferteByTip[item.getTip()].push_back(item);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  267-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  267-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  267-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  267-block  3
+call   11 never executed
+    $$$$$:  267-block  4
+        -:  268:        }
+    #####:  269:    }
+    %%%%%:  269-block  0
+call    0 never executed
+    $$$$$:  269-block  1
+call    1 never executed
+    #####:  270:}
+    %%%%%:  270-block  0
+call    0 never executed
+    $$$$$:  270-block  1
+call    1 never executed

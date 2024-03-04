@@ -1,0 +1,40 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/AbsRepo.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/4/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LABORATOR8_9OOP_ABSREPO_H
+        -:    6:#define LABORATOR8_9OOP_ABSREPO_H
+        -:    7:#include "Oferta.h"
+        -:    8:#include <vector>
+        -:    9:
+        -:   10:class AbsRepo {
+        -:   11:protected:
+        -:   12:    vector<Oferta> oferte;
+        -:   13:public:
+function _ZN7AbsRepoD2Ev called 0 returned 0% blocks executed 0%
+    #####:   14:    virtual ~AbsRepo() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+        -:   15:
+        -:   16:    virtual void add(const Oferta &oferta) = 0;
+        -:   17:
+        -:   18:    virtual void remove(const Oferta &oferta) = 0;
+        -:   19:
+        -:   20:    virtual void update(const Oferta &oferta) = 0;
+        -:   21:
+        -:   22:    virtual const vector<Oferta> &getAll() const = 0;
+        -:   23:
+        -:   24:    virtual int size() const = 0;
+        -:   25:
+        -:   26:    virtual const Oferta &getOferta(int index) const = 0 ;
+        -:   27:
+        -:   28:    virtual int find(const Oferta &oferta) const = 0 ;
+        -:   29:
+        -:   30:};
+        -:   31:
+        -:   32:
+        -:   33:#endif //LABORATOR8_9OOP_ABSREPO_H

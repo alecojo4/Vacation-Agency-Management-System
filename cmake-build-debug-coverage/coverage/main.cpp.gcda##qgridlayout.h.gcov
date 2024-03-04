@@ -1,0 +1,101 @@
+        -:    0:Source:C:/Qt/6.5.0/mingw_64/include/QtWidgets/qgridlayout.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2016 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QGRIDLAYOUT_H
+        -:    5:#define QGRIDLAYOUT_H
+        -:    6:
+        -:    7:#include <QtWidgets/qtwidgetsglobal.h>
+        -:    8:#include <QtWidgets/qlayout.h>
+        -:    9:#ifdef QT_INCLUDE_COMPAT
+        -:   10:#include <QtWidgets/qwidget.h>
+        -:   11:#endif
+        -:   12:
+        -:   13:#include <limits.h>
+        -:   14:
+        -:   15:QT_BEGIN_NAMESPACE
+        -:   16:
+        -:   17:
+        -:   18:class QGridLayoutPrivate;
+        -:   19:
+        -:   20:class Q_WIDGETS_EXPORT QGridLayout : public QLayout
+        -:   21:{
+        -:   22:    Q_OBJECT
+        -:   23:    Q_DECLARE_PRIVATE(QGridLayout)
+        -:   24:    QDOC_PROPERTY(int horizontalSpacing READ horizontalSpacing WRITE setHorizontalSpacing)
+        -:   25:    QDOC_PROPERTY(int verticalSpacing READ verticalSpacing WRITE setVerticalSpacing)
+        -:   26:
+        -:   27:public:
+        -:   28:    explicit QGridLayout(QWidget *parent = nullptr);
+        -:   29:    ~QGridLayout();
+        -:   30:
+        -:   31:    QSize sizeHint() const override;
+        -:   32:    QSize minimumSize() const override;
+        -:   33:    QSize maximumSize() const override;
+        -:   34:
+        -:   35:    void setHorizontalSpacing(int spacing);
+        -:   36:    int horizontalSpacing() const;
+        -:   37:    void setVerticalSpacing(int spacing);
+        -:   38:    int verticalSpacing() const;
+        -:   39:    void setSpacing(int spacing) override;
+        -:   40:    int spacing() const override;
+        -:   41:
+        -:   42:    void setRowStretch(int row, int stretch);
+        -:   43:    void setColumnStretch(int column, int stretch);
+        -:   44:    int rowStretch(int row) const;
+        -:   45:    int columnStretch(int column) const;
+        -:   46:
+        -:   47:    void setRowMinimumHeight(int row, int minSize);
+        -:   48:    void setColumnMinimumWidth(int column, int minSize);
+        -:   49:    int rowMinimumHeight(int row) const;
+        -:   50:    int columnMinimumWidth(int column) const;
+        -:   51:
+        -:   52:    int columnCount() const;
+        -:   53:    int rowCount() const;
+        -:   54:
+        -:   55:    QRect cellRect(int row, int column) const;
+        -:   56:
+        -:   57:    bool hasHeightForWidth() const override;
+        -:   58:    int heightForWidth(int) const override;
+        -:   59:    int minimumHeightForWidth(int) const override;
+        -:   60:
+        -:   61:    Qt::Orientations expandingDirections() const override;
+        -:   62:    void invalidate() override;
+        -:   63:
+function _ZN11QGridLayout9addWidgetEP7QWidget called 2 returned 100% blocks executed 100%
+        2:   64:    inline void addWidget(QWidget *w) { QLayout::addWidget(w); }
+        2:   64-block  0
+call    0 returned 2
+        -:   65:    void addWidget(QWidget *, int row, int column, Qt::Alignment = Qt::Alignment());
+        -:   66:    void addWidget(QWidget *, int row, int column, int rowSpan, int columnSpan, Qt::Alignment = Qt::Alignment());
+        -:   67:    void addLayout(QLayout *, int row, int column, Qt::Alignment = Qt::Alignment());
+        -:   68:    void addLayout(QLayout *, int row, int column, int rowSpan, int columnSpan, Qt::Alignment = Qt::Alignment());
+        -:   69:
+        -:   70:    void setOriginCorner(Qt::Corner);
+        -:   71:    Qt::Corner originCorner() const;
+        -:   72:
+        -:   73:    QLayoutItem *itemAt(int index) const override;
+        -:   74:    QLayoutItem *itemAtPosition(int row, int column) const;
+        -:   75:    QLayoutItem *takeAt(int index) override;
+        -:   76:    int count() const override;
+        -:   77:    void setGeometry(const QRect&) override;
+        -:   78:
+        -:   79:    void addItem(QLayoutItem *item, int row, int column, int rowSpan = 1, int columnSpan = 1, Qt::Alignment = Qt::Alignment());
+        -:   80:
+        -:   81:    void setDefaultPositioning(int n, Qt::Orientation orient);
+        -:   82:    void getItemPosition(int idx, int *row, int *column, int *rowSpan, int *columnSpan) const;
+        -:   83:
+        -:   84:protected:
+        -:   85:    void addItem(QLayoutItem *) override;
+        -:   86:
+        -:   87:private:
+        -:   88:    Q_DISABLE_COPY(QGridLayout)
+        -:   89:
+        -:   90:};
+        -:   91:
+        -:   92:QT_END_NAMESPACE
+        -:   93:
+        -:   94:#endif // QGRIDLAYOUT_H

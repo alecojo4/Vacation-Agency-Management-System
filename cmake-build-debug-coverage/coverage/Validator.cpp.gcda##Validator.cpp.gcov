@@ -1,0 +1,100 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Validator.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Validator.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "Validator.h"
+        -:    6:#pragma once
+        -:    7:
+function _ZN9Validator14validateOfertaERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:    8:void Validator::validateOferta(const Oferta &oferta) {
+    #####:    9:    string errors;
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:    if (oferta.getDenumire().empty()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   10-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   11:        errors += "Denumire cannot be empty!\n";
+    %%%%%:   11-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   12:    }
+    #####:   13:    if (oferta.getDestinatie().empty()) {
+    %%%%%:   13-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   13-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   14:        errors += "Destinatie cannot be empty!\n";
+    %%%%%:   14-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   15:    }
+    #####:   16:    if (oferta.getPret() < 0) {
+    %%%%%:   16-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   16-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:   17:        errors += "Pret cannot be negative!\n";
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   18:    }
+    #####:   19:    if (oferta.getTip().empty()) {
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   19-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   20:        errors += "Tip cannot be empty!\n";
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   21:    }
+    #####:   22:    if (!errors.empty()) {
+    %%%%%:   22-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   23:        throw ValidationException(errors);
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   23-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    $$$$$:   23-block  2
+call    7 never executed
+        -:   24:    }
+    #####:   25:}
+    %%%%%:   25-block  0
+call    0 never executed
+    $$$$$:   25-block  1
+call    1 never executed

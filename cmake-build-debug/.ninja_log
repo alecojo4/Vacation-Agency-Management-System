@@ -1,0 +1,20 @@
+# ninja log v5
+443	565	7054421703301507	CMakeFiles/labQTFinal.dir/labQTFinal_autogen/mocs_compilation.cpp.obj	a18c0b5a919533fe
+20	427	7054992612215751	labQTFinal_autogen/timestamp	6fd155457ec48280
+387	3939	7054956985677592	CMakeFiles/labQTFinal.dir/Service.cpp.obj	270d35f043844ab9
+20	427	7054992612215751	C:/Users/Ale/CLionProjects/labQTFinal/cmake-build-debug/labQTFinal_autogen/mocs_compilation.cpp	6fd155457ec48280
+20	427	7054992612215751	labQTFinal_autogen/mocs_compilation.cpp	6fd155457ec48280
+13306	15601	7054992754493337	labQTFinal.exe	ed74211e2cd6dec
+20	427	7054992612215751	C:/Users/Ale/CLionProjects/labQTFinal/cmake-build-debug/labQTFinal_autogen/timestamp	6fd155457ec48280
+437	13305	7054992740910805	CMakeFiles/labQTFinal.dir/main.cpp.obj	934997ab9b860219
+392	2544	7054510097123722	CMakeFiles/labQTFinal.dir/Exceptions.cpp.obj	d4b1ac005fb14d3c
+403	2564	7054510098490841	CMakeFiles/labQTFinal.dir/AbsRepo.cpp.obj	8889322f1ae45172
+434	2913	7054510103185784	CMakeFiles/labQTFinal.dir/OfertaRepo.cpp.obj	debb131aff2d604b
+379	2370	7054956969997773	CMakeFiles/labQTFinal.dir/UI.cpp.obj	c2f1c1538ed2ec17
+447	11870	7054992726565354	CMakeFiles/labQTFinal.dir/OfertaGUI.cpp.obj	5a782a7ca06e6be1
+2564	4362	7054510117516429	CMakeFiles/labQTFinal.dir/Validator.cpp.obj	16f68f75b2212f7f
+397	2496	7054956971275717	CMakeFiles/labQTFinal.dir/Tests.cpp.obj	2c59b20b68a2b20e
+412	4625	7054510120330119	CMakeFiles/labQTFinal.dir/OfertaRepoFile.cpp.obj	47fcaf916d53d21e
+2545	4961	7054510123959409	CMakeFiles/labQTFinal.dir/Oferta.cpp.obj	31773e5dd57c03eb
+4292	6487	7054510139274312	CMakeFiles/labQTFinal.dir/Undo.cpp.obj	e044b4ccc6fc8a2b
+348	498	7054512091479765	CMakeFiles/labQTFinal.dir/testtttt.cpp.obj	c1105a86f645a517

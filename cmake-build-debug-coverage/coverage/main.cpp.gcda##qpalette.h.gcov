@@ -1,0 +1,182 @@
+        -:    0:Source:C:/Qt/6.5.0/mingw_64/include/QtGui/qpalette.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2016 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QPALETTE_H
+        -:    5:#define QPALETTE_H
+        -:    6:
+        -:    7:#include <QtGui/qtguiglobal.h>
+        -:    8:#include <QtGui/qwindowdefs.h>
+        -:    9:#include <QtGui/qcolor.h>
+        -:   10:#include <QtGui/qbrush.h>
+        -:   11:
+        -:   12:QT_BEGIN_NAMESPACE
+        -:   13:
+        -:   14:
+        -:   15:class QPalettePrivate;
+        -:   16:class QVariant;
+        -:   17:
+        -:   18:class Q_GUI_EXPORT QPalette
+        -:   19:{
+        -:   20:    Q_GADGET
+        -:   21:public:
+        -:   22:    QPalette();
+        -:   23:    QPalette(const QColor &button);
+        -:   24:    QPalette(Qt::GlobalColor button);
+        -:   25:    QPalette(const QColor &button, const QColor &window);
+        -:   26:    QPalette(const QBrush &windowText, const QBrush &button, const QBrush &light,
+        -:   27:             const QBrush &dark, const QBrush &mid, const QBrush &text,
+        -:   28:             const QBrush &bright_text, const QBrush &base, const QBrush &window);
+        -:   29:    QPalette(const QColor &windowText, const QColor &window, const QColor &light,
+        -:   30:             const QColor &dark, const QColor &mid, const QColor &text, const QColor &base);
+        -:   31:    QPalette(const QPalette &palette);
+        -:   32:    ~QPalette();
+        -:   33:    QPalette &operator=(const QPalette &palette);
+        -:   34:    QPalette(QPalette &&other) noexcept
+        -:   35:        : d(std::exchange(other.d, nullptr)), currentGroup(other.currentGroup)
+        -:   36:    {}
+        -:   37:    QT_MOVE_ASSIGNMENT_OPERATOR_IMPL_VIA_PURE_SWAP(QPalette)
+        -:   38:
+        -:   39:    void swap(QPalette &other) noexcept
+        -:   40:    {
+        -:   41:        std::swap(currentGroup, other.currentGroup);
+        -:   42:        qt_ptr_swap(d, other.d);
+        -:   43:    }
+        -:   44:
+        -:   45:    operator QVariant() const;
+        -:   46:
+        -:   47:    // Do not change the order, the serialization format depends on it
+        -:   48:    enum ColorGroup { Active, Disabled, Inactive, NColorGroups, Current, All, Normal = Active };
+        -:   49:    Q_ENUM(ColorGroup)
+        -:   50:    enum ColorRole { WindowText, Button, Light, Midlight, Dark, Mid,
+        -:   51:                     Text, BrightText, ButtonText, Base, Window, Shadow,
+        -:   52:                     Highlight, HighlightedText,
+        -:   53:                     Link, LinkVisited,
+        -:   54:                     AlternateBase,
+        -:   55:                     NoRole,
+        -:   56:                     ToolTipBase, ToolTipText,
+        -:   57:                     PlaceholderText,
+        -:   58:                     NColorRoles = PlaceholderText + 1,
+        -:   59:                   };
+        -:   60:    Q_ENUM(ColorRole)
+        -:   61:
+        -:   62:    inline ColorGroup currentColorGroup() const { return currentGroup; }
+        -:   63:    inline void setCurrentColorGroup(ColorGroup cg) { currentGroup = cg; }
+        -:   64:
+        -:   65:    inline const QColor &color(ColorGroup cg, ColorRole cr) const
+        -:   66:    { return brush(cg, cr).color(); }
+        -:   67:    const QBrush &brush(ColorGroup cg, ColorRole cr) const;
+        -:   68:    inline void setColor(ColorGroup cg, ColorRole cr, const QColor &color);
+        -:   69:    inline void setColor(ColorRole cr, const QColor &color);
+        -:   70:    inline void setBrush(ColorRole cr, const QBrush &brush);
+        -:   71:    bool isBrushSet(ColorGroup cg, ColorRole cr) const;
+        -:   72:    void setBrush(ColorGroup cg, ColorRole cr, const QBrush &brush);
+        -:   73:    void setColorGroup(ColorGroup cr, const QBrush &windowText, const QBrush &button,
+        -:   74:                       const QBrush &light, const QBrush &dark, const QBrush &mid,
+        -:   75:                       const QBrush &text, const QBrush &bright_text, const QBrush &base,
+        -:   76:                       const QBrush &window);
+        -:   77:    bool isEqual(ColorGroup cr1, ColorGroup cr2) const;
+        -:   78:
+        -:   79:    inline const QColor &color(ColorRole cr) const { return color(Current, cr); }
+        -:   80:    inline const QBrush &brush(ColorRole cr) const { return brush(Current, cr); }
+        -:   81:    inline const QBrush &windowText() const { return brush(WindowText); }
+        -:   82:    inline const QBrush &button() const { return brush(Button); }
+        -:   83:    inline const QBrush &light() const { return brush(Light); }
+        -:   84:    inline const QBrush &dark() const { return brush(Dark); }
+        -:   85:    inline const QBrush &mid() const { return brush(Mid); }
+        -:   86:    inline const QBrush &text() const { return brush(Text); }
+        -:   87:    inline const QBrush &base() const { return brush(Base); }
+        -:   88:    inline const QBrush &alternateBase() const { return brush(AlternateBase); }
+        -:   89:    inline const QBrush &toolTipBase() const { return brush(ToolTipBase); }
+        -:   90:    inline const QBrush &toolTipText() const { return brush(ToolTipText); }
+        -:   91:    inline const QBrush &window() const { return brush(Window); }
+        -:   92:    inline const QBrush &midlight() const { return brush(Midlight); }
+        -:   93:    inline const QBrush &brightText() const { return brush(BrightText); }
+        -:   94:    inline const QBrush &buttonText() const { return brush(ButtonText); }
+        -:   95:    inline const QBrush &shadow() const { return brush(Shadow); }
+        -:   96:    inline const QBrush &highlight() const { return brush(Highlight); }
+        -:   97:    inline const QBrush &highlightedText() const { return brush(HighlightedText); }
+        -:   98:    inline const QBrush &link() const { return brush(Link); }
+        -:   99:    inline const QBrush &linkVisited() const { return brush(LinkVisited); }
+        -:  100:    inline const QBrush &placeholderText() const { return brush(PlaceholderText); }
+        -:  101:
+        -:  102:    bool operator==(const QPalette &p) const;
+        -:  103:    inline bool operator!=(const QPalette &p) const { return !(operator==(p)); }
+        -:  104:    bool isCopyOf(const QPalette &p) const;
+        -:  105:
+        -:  106:    qint64 cacheKey() const;
+        -:  107:
+        -:  108:    QPalette resolve(const QPalette &other) const;
+        -:  109:
+        -:  110:    using ResolveMask = quint64;
+        -:  111:    ResolveMask resolveMask() const;
+        -:  112:    void setResolveMask(ResolveMask mask);
+        -:  113:
+        -:  114:private:
+        -:  115:    void setColorGroup(ColorGroup cr, const QBrush &windowText, const QBrush &button,
+        -:  116:                       const QBrush &light, const QBrush &dark, const QBrush &mid,
+        -:  117:                       const QBrush &text, const QBrush &bright_text,
+        -:  118:                       const QBrush &base, const QBrush &alternate_base,
+        -:  119:                       const QBrush &window, const QBrush &midlight,
+        -:  120:                       const QBrush &button_text, const QBrush &shadow,
+        -:  121:                       const QBrush &highlight, const QBrush &highlighted_text,
+        -:  122:                       const QBrush &link, const QBrush &link_visited);
+        -:  123:    void setColorGroup(ColorGroup cr, const QBrush &windowText, const QBrush &button,
+        -:  124:                       const QBrush &light, const QBrush &dark, const QBrush &mid,
+        -:  125:                       const QBrush &text, const QBrush &bright_text,
+        -:  126:                       const QBrush &base, const QBrush &alternate_base,
+        -:  127:                       const QBrush &window, const QBrush &midlight,
+        -:  128:                       const QBrush &button_text, const QBrush &shadow,
+        -:  129:                       const QBrush &highlight, const QBrush &highlighted_text,
+        -:  130:                       const QBrush &link, const QBrush &link_visited,
+        -:  131:                       const QBrush &toolTipBase, const QBrush &toolTipText);
+        -:  132:    void init();
+        -:  133:    void detach();
+        -:  134:
+        -:  135:    QPalettePrivate *d;
+        -:  136:    ColorGroup currentGroup{Active};
+        -:  137:
+        -:  138:    friend Q_GUI_EXPORT QDataStream &operator<<(QDataStream &s, const QPalette &p);
+        -:  139:};
+        -:  140:
+        -:  141:Q_DECLARE_SHARED(QPalette)
+        -:  142:
+function _ZN8QPalette8setColorENS_10ColorGroupENS_9ColorRoleERK6QColor called 0 returned 0% blocks executed 0%
+    #####:  143:inline void QPalette::setColor(ColorGroup acg, ColorRole acr,
+        -:  144:                               const QColor &acolor)
+    #####:  145:{ setBrush(acg, acr, QBrush(acolor)); }
+    %%%%%:  145-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  145-block  1
+call    4 never executed
+    $$$$$:  145-block  2
+call    5 never executed
+function _ZN8QPalette8setColorENS_9ColorRoleERK6QColor called 0 returned 0% blocks executed 0%
+    #####:  146:inline void QPalette::setColor(ColorRole acr, const QColor &acolor)
+    #####:  147:{ setColor(All, acr, acolor); }
+    %%%%%:  147-block  0
+call    0 never executed
+        -:  148:inline void QPalette::setBrush(ColorRole acr, const QBrush &abrush)
+        -:  149:{ setBrush(All, acr, abrush); }
+        -:  150:
+        -:  151:/*****************************************************************************
+        -:  152:  QPalette stream functions
+        -:  153: *****************************************************************************/
+        -:  154:#ifndef QT_NO_DATASTREAM
+        -:  155:Q_GUI_EXPORT QDataStream &operator<<(QDataStream &ds, const QPalette &p);
+        -:  156:Q_GUI_EXPORT QDataStream &operator>>(QDataStream &ds, QPalette &p);
+        -:  157:#endif // QT_NO_DATASTREAM
+        -:  158:
+        -:  159:#ifndef QT_NO_DEBUG_STREAM
+        -:  160:Q_GUI_EXPORT QDebug operator<<(QDebug, const QPalette &);
+        -:  161:#endif
+        -:  162:
+        -:  163:QT_END_NAMESPACE
+        -:  164:
+        -:  165:#endif // QPALETTE_H

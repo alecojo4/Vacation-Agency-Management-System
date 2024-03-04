@@ -1,0 +1,61 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Undo.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LABORATOR8_9OOP_UNDO_H
+        -:    6:#define LABORATOR8_9OOP_UNDO_H
+        -:    7:#pragma once
+        -:    8:
+        -:    9:#include "OfertaRepoFile.h"
+        -:   10:
+        -:   11:
+        -:   12:class ActiuneUndo {
+        -:   13:public :
+        -:   14:    //Funcțiile virtuale sunt utilizate pentru a permite polimorfismul în cadrul clasei și a-i permite să fie derivată.
+        -:   15:
+        -:   16:    virtual void undo() = 0;
+        -:   17:    //clasa "ActiuneUndo" definește o interfață comună pentru alte clase care doresc să implementeze undo/redo.
+        -:   18:
+        -:   19:    //destructorul este declarat și el ca virtual, ceea ce înseamnă că, atunci când se apelează funcția "delete" pentru un obiect al unei clase derivate
+        -:   20:    // Se va apela mai întâi destructorul clasei derivate și apoi destructorul clasei de bază.
+function _ZN11ActiuneUndoD2Ev called 0 returned 0% blocks executed 0%
+    #####:   21:    virtual ~ActiuneUndo() = default;
+        -:   22:};
+        -:   23:
+        -:   24:class UndoAdauga : public ActiuneUndo {
+        -:   25:private:
+        -:   26:    Oferta oferta;
+        -:   27:    OfertaRepoFile& repo;
+        -:   28:public:
+        -:   29:    //Construcția ": repo{repo}, oferta{oferta} {}" reprezintă lista de inițializare a membrilor clasei.
+        -:   30:    // Aceasta este o modalitate mai eficientă de a inițializa membrii unei clase decât folosindu-se constructori în corpul clasei.
+        -:   31:    //În cazul de față, se inițializează referința "repo" cu obiectul primit ca argument și obiectul "oferta" cu obiectul primit ca al doilea argument.
+        -:   32:    UndoAdauga(OfertaRepoFile& repo, const Oferta& oferta) :  repo{repo}, oferta{oferta} {};
+        -:   33:    // {} corpul constructorului ( care este gol )
+        -:   34:
+        -:   35:    //Metoda "undo()" este definită ca fiind "override", ceea ce înseamnă că suprascrie funcția virtuală pură "undo()"
+        -:   36:    void undo() override;
+        -:   37:};
+        -:   38:
+        -:   39:class UndoSterge : public ActiuneUndo {
+        -:   40:private:
+        -:   41:    Oferta oferta;
+        -:   42:    OfertaRepoFile& repo;
+        -:   43:public:
+        -:   44:    UndoSterge(OfertaRepoFile& repo, const Oferta& oferta) :  repo{repo}, oferta{oferta} {};
+        -:   45:    void undo() override;
+        -:   46:};
+        -:   47:
+        -:   48:class UndoModifica : public ActiuneUndo {
+        -:   49:private:
+        -:   50:    Oferta oferta;
+        -:   51:    OfertaRepoFile& repo;
+        -:   52:public:
+        -:   53:    UndoModifica(OfertaRepoFile& repo, const Oferta& oferta) :  repo{repo}, oferta{oferta} {};
+        -:   54:    void undo() override;
+        -:   55:};
+        -:   56:#endif //LABORATOR8_9OOP_UNDO_H

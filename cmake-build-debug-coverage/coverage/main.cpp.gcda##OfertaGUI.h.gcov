@@ -1,0 +1,2531 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/OfertaGUI.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/8/2023.
+        -:    3://
+        -:    4:#include <QtWidgets/qwidget.h>
+        -:    5:#include <qdebug.h>
+        -:    6:#include <qmessagebox.h>
+        -:    7:#include <qradiobutton.h>
+        -:    8:#include <qbuttongroup.h>
+        -:    9:#include <QRegularExpression>
+        -:   10:#include "Service.h"
+        -:   11:#include <vector>
+        -:   12:#include <string>
+        -:   13:#include <QVBoxLayout>
+        -:   14:#include <QHBoxLayout>
+        -:   15:#include <QListWidget>
+        -:   16:#include <QPushButton>
+        -:   17:#include <QLineEdit>
+        -:   18:#include <QFormLayout>
+        -:   19:#include "Exceptions.h"
+        -:   20:using std::vector;
+        -:   21:using std::string;
+        -:   22:
+        -:   23:class OfertaGUI : public QWidget {
+        -:   24:private:
+        -:   25:    vector<Oferta> oferte;
+        -:   26:    QPushButton* btnExit = new QPushButton{"&Exit"};
+        -:   27:public:
+        -:   28:    OfertaGUI(vector <Oferta> oferta){
+        -:   29:        oferte=oferta;
+        -:   30:        initOfertaGUI();
+        -:   31:        initConnect();
+        -:   32:    }
+        -:   33:    void initOfertaGUI(){
+        -:   34:        QVBoxLayout* mainLayout=new QVBoxLayout{};
+        -:   35:        setLayout(mainLayout);
+        -:   36:        QListWidget* list=new QListWidget{};
+        -:   37:        for(const auto& oferta:oferte){
+        -:   38:            QListWidgetItem* item=new QListWidgetItem{QString::fromStdString(oferta.getDenumire())+" "+QString::fromStdString(oferta.getDestinatie())+" "+QString::fromStdString(oferta.getTip())+" "+QString::number(oferta.getPret())};
+        -:   39:            list->addItem(item);
+        -:   40:        }
+        -:   41:        mainLayout->addWidget(list);
+        -:   42:        mainLayout->addWidget(btnExit);
+        -:   43:    }
+        -:   44:    void initConnect(){
+        -:   45:        QObject::connect(btnExit, &QPushButton::clicked, [&]() {
+        -:   46:            qDebug()<<"Exit";
+        -:   47:        QMessageBox::information(this,"Info","Aplicatia a fost deschisa cu succes!");
+        -:   48:        QWidget::close();
+        -:   49:        });
+        -:   50:    }
+        -:   51:};
+        -:   52:class OfertaGUI2 : public QWidget {
+        -:   53:public:
+        -:   54:    friend class OfertaGUI;
+function _ZN10OfertaGUI2C1ER7Service called 1 returned 100% blocks executed 48%
+        1:   55:    OfertaGUI2(Service&s):service{s} {
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   55-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   55-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   55-block  3
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   55-block  4
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   55-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   55-block  6
+call   19 returned 1
+call   20 returned 1
+branch 21 taken 1 (fallthrough)
+branch 22 taken 0 (throw)
+        1:   55-block  7
+call   23 returned 1
+branch 24 taken 1 (fallthrough)
+branch 25 taken 0 (throw)
+        1:   55-block  8
+call   26 returned 1
+branch 27 taken 1 (fallthrough)
+branch 28 taken 0 (throw)
+        1:   55-block  9
+call   29 returned 1
+call   30 returned 1
+branch 31 taken 1 (fallthrough)
+branch 32 taken 0 (throw)
+        1:   55-block 10
+call   33 returned 1
+branch 34 taken 1 (fallthrough)
+branch 35 taken 0 (throw)
+        1:   55-block 11
+call   36 returned 1
+branch 37 taken 1 (fallthrough)
+branch 38 taken 0 (throw)
+        1:   55-block 12
+call   39 returned 1
+call   40 returned 1
+branch 41 taken 1 (fallthrough)
+branch 42 taken 0 (throw)
+        1:   55-block 13
+call   43 returned 1
+branch 44 taken 1 (fallthrough)
+branch 45 taken 0 (throw)
+        1:   55-block 14
+call   46 returned 1
+branch 47 taken 1 (fallthrough)
+branch 48 taken 0 (throw)
+        1:   55-block 15
+call   49 returned 1
+call   50 returned 1
+branch 51 taken 1 (fallthrough)
+branch 52 taken 0 (throw)
+        1:   55-block 16
+call   53 returned 1
+branch 54 taken 1 (fallthrough)
+branch 55 taken 0 (throw)
+        1:   55-block 17
+call   56 returned 1
+branch 57 taken 1 (fallthrough)
+branch 58 taken 0 (throw)
+        1:   55-block 18
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+        1:   55-block 19
+call   63 returned 1
+branch 64 taken 1 (fallthrough)
+branch 65 taken 0 (throw)
+        1:   55-block 20
+call   66 returned 1
+branch 67 taken 1 (fallthrough)
+branch 68 taken 0 (throw)
+        1:   55-block 21
+call   69 returned 1
+call   70 returned 1
+branch 71 taken 1 (fallthrough)
+branch 72 taken 0 (throw)
+        1:   55-block 22
+call   73 returned 1
+branch 74 taken 1 (fallthrough)
+branch 75 taken 0 (throw)
+        1:   55-block 23
+call   76 returned 1
+branch 77 taken 1 (fallthrough)
+branch 78 taken 0 (throw)
+        1:   55-block 24
+call   79 returned 1
+call   80 returned 1
+branch 81 taken 1 (fallthrough)
+branch 82 taken 0 (throw)
+        1:   55-block 25
+call   83 returned 1
+branch 84 taken 1 (fallthrough)
+branch 85 taken 0 (throw)
+        1:   55-block 26
+call   86 returned 1
+branch 87 taken 1 (fallthrough)
+branch 88 taken 0 (throw)
+        1:   55-block 27
+call   89 returned 1
+call   90 returned 1
+branch 91 taken 1 (fallthrough)
+branch 92 taken 0 (throw)
+        1:   55-block 28
+call   93 returned 1
+branch 94 taken 1 (fallthrough)
+branch 95 taken 0 (throw)
+        1:   55-block 29
+call   96 returned 1
+branch 97 taken 1 (fallthrough)
+branch 98 taken 0 (throw)
+        1:   55-block 30
+call   99 returned 1
+call   100 returned 1
+branch 101 taken 1 (fallthrough)
+branch 102 taken 0 (throw)
+        1:   55-block 31
+call   103 returned 1
+branch 104 taken 1 (fallthrough)
+branch 105 taken 0 (throw)
+        1:   55-block 32
+call   106 returned 1
+branch 107 taken 1 (fallthrough)
+branch 108 taken 0 (throw)
+        1:   55-block 33
+call   109 returned 1
+call   110 returned 1
+branch 111 taken 1 (fallthrough)
+branch 112 taken 0 (throw)
+        1:   55-block 34
+call   113 returned 1
+branch 114 taken 1 (fallthrough)
+branch 115 taken 0 (throw)
+        1:   55-block 35
+call   116 returned 1
+branch 117 taken 1 (fallthrough)
+branch 118 taken 0 (throw)
+        1:   55-block 36
+call   119 returned 1
+branch 120 taken 1 (fallthrough)
+branch 121 taken 0 (throw)
+        1:   55-block 37
+call   122 returned 1
+branch 123 taken 1 (fallthrough)
+branch 124 taken 0 (throw)
+        1:   55-block 38
+call   125 returned 1
+branch 126 taken 1 (fallthrough)
+branch 127 taken 0 (throw)
+        1:   55-block 39
+call   128 returned 1
+branch 129 taken 1 (fallthrough)
+branch 130 taken 0 (throw)
+        1:   55-block 40
+call   131 returned 1
+branch 132 taken 1 (fallthrough)
+branch 133 taken 0 (throw)
+        1:   55-block 41
+call   134 returned 1
+branch 135 taken 1 (fallthrough)
+branch 136 taken 0 (throw)
+        1:   55-block 42
+call   137 returned 1
+branch 138 taken 1 (fallthrough)
+branch 139 taken 0 (throw)
+        1:   55-block 43
+call   140 returned 1
+branch 141 taken 1 (fallthrough)
+branch 142 taken 0 (throw)
+        1:   55-block 44
+call   143 returned 1
+branch 144 taken 1 (fallthrough)
+branch 145 taken 0 (throw)
+        1:   55-block 45
+call   146 returned 1
+branch 147 taken 1 (fallthrough)
+branch 148 taken 0 (throw)
+        1:   55-block 46
+call   149 returned 1
+call   150 returned 1
+branch 151 taken 1 (fallthrough)
+branch 152 taken 0 (throw)
+        1:   55-block 47
+call   153 returned 1
+branch 154 taken 1 (fallthrough)
+branch 155 taken 0 (throw)
+        1:   55-block 48
+call   156 returned 1
+branch 157 taken 1 (fallthrough)
+branch 158 taken 0 (throw)
+        1:   55-block 49
+call   159 returned 1
+call   160 returned 1
+branch 161 taken 1 (fallthrough)
+branch 162 taken 0 (throw)
+        1:   55-block 50
+call   163 returned 1
+call   164 returned 1
+branch 165 taken 1 (fallthrough)
+branch 166 taken 0 (throw)
+        1:   55-block 51
+call   167 returned 1
+call   168 returned 1
+branch 169 taken 1 (fallthrough)
+branch 170 taken 0 (throw)
+        1:   55-block 52
+call   171 returned 1
+branch 172 taken 1 (fallthrough)
+branch 173 taken 0 (throw)
+    $$$$$:   55-block 53
+call   174 never executed
+    $$$$$:   55-block 54
+call   175 never executed
+    $$$$$:   55-block 55
+call   176 never executed
+    $$$$$:   55-block 56
+call   177 never executed
+    $$$$$:   55-block 57
+    $$$$$:   55-block 58
+call   178 never executed
+    $$$$$:   55-block 59
+call   179 never executed
+    $$$$$:   55-block 60
+    $$$$$:   55-block 61
+call   180 never executed
+    $$$$$:   55-block 62
+call   181 never executed
+    $$$$$:   55-block 63
+    $$$$$:   55-block 64
+call   182 never executed
+    $$$$$:   55-block 65
+call   183 never executed
+    $$$$$:   55-block 66
+    $$$$$:   55-block 67
+call   184 never executed
+    $$$$$:   55-block 68
+call   185 never executed
+    $$$$$:   55-block 69
+    $$$$$:   55-block 70
+call   186 never executed
+    $$$$$:   55-block 71
+call   187 never executed
+    $$$$$:   55-block 72
+    $$$$$:   55-block 73
+call   188 never executed
+    $$$$$:   55-block 74
+call   189 never executed
+    $$$$$:   55-block 75
+    $$$$$:   55-block 76
+call   190 never executed
+    $$$$$:   55-block 77
+call   191 never executed
+    $$$$$:   55-block 78
+    $$$$$:   55-block 79
+call   192 never executed
+    $$$$$:   55-block 80
+call   193 never executed
+    $$$$$:   55-block 81
+    $$$$$:   55-block 82
+call   194 never executed
+    $$$$$:   55-block 83
+call   195 never executed
+    $$$$$:   55-block 84
+    $$$$$:   55-block 85
+call   196 never executed
+    $$$$$:   55-block 86
+call   197 never executed
+    $$$$$:   55-block 87
+call   198 never executed
+    $$$$$:   55-block 88
+call   199 never executed
+    $$$$$:   55-block 89
+call   200 never executed
+    $$$$$:   55-block 90
+call   201 never executed
+    $$$$$:   55-block 91
+call   202 never executed
+    $$$$$:   55-block 92
+    $$$$$:   55-block 93
+call   203 never executed
+    $$$$$:   55-block 94
+call   204 never executed
+    $$$$$:   55-block 95
+    $$$$$:   55-block 96
+    $$$$$:   55-block 97
+call   205 never executed
+    $$$$$:   55-block 98
+    $$$$$:   55-block 99
+call   206 never executed
+        1:   56:        initGUI();
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   57:        loadData(service.getAll());
+        1:   57-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   57-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   58:        initConnect();
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59:        addButton(service.getAll());
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   60:
+        1:   61:    }
+        1:   61-block  0
+    $$$$$:   61-block  1
+call    0 never executed
+    $$$$$:   61-block  2
+call    1 never executed
+function _ZN10OfertaGUI29addOfertaEv called 0 returned 0% blocks executed 0%
+    #####:   62:    void addOferta() {
+    #####:   63:        auto denumire = txtDenumire->text().toStdString();
+    %%%%%:   63-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   63-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   63-block  2
+    #####:   64:        auto destinatie = txtDestinatie->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   64-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   64-block  1
+    #####:   65:        auto tip = txtTip->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   65-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   65-block  1
+    #####:   66:        auto pret = txtPret->text().toInt();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   66-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   66-block  1
+call    6 never executed
+    $$$$$:   66-block  2
+call    7 never executed
+    $$$$$:   66-block  3
+        -:   67:        try {
+        -:   68:        //cout<<"add oferta"<<denumire<<destinatie<<pret<<tip<<endl;
+    #####:   69:            service.addOferta(denumire, destinatie, pret, tip);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   70:            loadData(service.getAll());
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   70-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   71:        }
+    =====:   72:        catch (ValidationException &ex) {
+    $$$$$:   72-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   72-block  1
+call    3 never executed
+    =====:   73:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta introdusa invalida!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   73-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   73-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   73-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   73-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:   73-block  4
+call   18 never executed
+    $$$$$:   73-block  5
+    $$$$$:   73-block  6
+call   19 never executed
+    $$$$$:   73-block  7
+    $$$$$:   73-block  8
+call   20 never executed
+    $$$$$:   73-block  9
+    $$$$$:   73-block 10
+call   21 never executed
+    $$$$$:   73-block 11
+    $$$$$:   73-block 12
+    =====:   74:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   74-block  0
+call    3 never executed
+        -:   75:
+    =====:   76:        catch (RepositoryException &ex) {
+    $$$$$:   76-block  0
+call    0 never executed
+    =====:   77:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta existenta!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   77-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   77-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   77-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   77-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:   77-block  4
+call   18 never executed
+    $$$$$:   77-block  5
+    $$$$$:   77-block  6
+call   19 never executed
+    $$$$$:   77-block  7
+    $$$$$:   77-block  8
+call   20 never executed
+    $$$$$:   77-block  9
+    $$$$$:   77-block 10
+call   21 never executed
+    $$$$$:   77-block 11
+    $$$$$:   77-block 12
+    =====:   78:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   78-block  0
+call    3 never executed
+    #####:   79:        addButton(service.getAll());
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   79-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   80:    }
+    %%%%%:   80-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   80-block  1
+call    3 never executed
+    $$$$$:   80-block  2
+call    4 never executed
+    $$$$$:   80-block  3
+call    5 never executed
+        -:   81:
+function _ZN10OfertaGUI212removeOfertaEv called 0 returned 0% blocks executed 0%
+    #####:   82:    void removeOferta(){
+    #####:   83:        auto denumire = txtDenumire->text().toStdString();
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   83-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   83-block  2
+    #####:   84:        auto destinatie = txtDestinatie->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   84-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   84-block  1
+    #####:   85:        auto tip = txtTip->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   85-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   85-block  1
+    #####:   86:        auto pret = txtPret->text().toInt();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   86-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   86-block  1
+call    6 never executed
+    $$$$$:   86-block  2
+call    7 never executed
+    $$$$$:   86-block  3
+        -:   87:       try {
+    #####:   88:            service.removeOferta(denumire, destinatie, pret, tip);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:            loadData(service.getAll());
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   89-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   90:        }
+    =====:   91:        catch (ValidationException &ex) {
+    $$$$$:   91-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   91-block  1
+call    3 never executed
+    =====:   92:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta introdusa invalida!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   92-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   92-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   92-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   92-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:   92-block  4
+call   18 never executed
+    $$$$$:   92-block  5
+    $$$$$:   92-block  6
+call   19 never executed
+    $$$$$:   92-block  7
+    $$$$$:   92-block  8
+call   20 never executed
+    $$$$$:   92-block  9
+    $$$$$:   92-block 10
+call   21 never executed
+    $$$$$:   92-block 11
+    $$$$$:   92-block 12
+    =====:   93:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   93-block  0
+call    3 never executed
+    =====:   94:        catch (RepositoryException &ex) {
+    $$$$$:   94-block  0
+call    0 never executed
+    =====:   95:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta inexistenta!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   95-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   95-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   95-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   95-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:   95-block  4
+call   18 never executed
+    $$$$$:   95-block  5
+    $$$$$:   95-block  6
+call   19 never executed
+    $$$$$:   95-block  7
+    $$$$$:   95-block  8
+call   20 never executed
+    $$$$$:   95-block  9
+    $$$$$:   95-block 10
+call   21 never executed
+    $$$$$:   95-block 11
+    $$$$$:   95-block 12
+    =====:   96:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   96-block  0
+call    3 never executed
+    #####:   97:        addButton(service.getAll());
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   97-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   98:    }
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   98-block  1
+call    3 never executed
+    $$$$$:   98-block  2
+call    4 never executed
+    $$$$$:   98-block  3
+call    5 never executed
+        -:   99:
+function _ZN10OfertaGUI212updateOfertaEv called 0 returned 0% blocks executed 0%
+    #####:  100:    void updateOferta(){
+    #####:  101:        auto denumire = txtDenumire->text().toStdString();
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  101-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  101-block  2
+    #####:  102:        auto destinatie = txtDestinatie->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  102-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  102-block  1
+    #####:  103:        auto tip = txtTip->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  103-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  103-block  1
+    #####:  104:        auto pret = txtPret->text().toInt();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  104-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  104-block  1
+call    6 never executed
+    $$$$$:  104-block  2
+call    7 never executed
+    $$$$$:  104-block  3
+        -:  105:        try {
+    #####:  106:            service.updateOferta(denumire, destinatie, pret, tip);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  107:            loadData(service.getAll());
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  107-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  108:        }
+    =====:  109:        catch (ValidationException &ex) {
+    $$$$$:  109-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  109-block  1
+call    3 never executed
+    =====:  110:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta introdusa invalida!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  110-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  110-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:  110-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  110-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  110-block  4
+call   18 never executed
+    $$$$$:  110-block  5
+    $$$$$:  110-block  6
+call   19 never executed
+    $$$$$:  110-block  7
+    $$$$$:  110-block  8
+call   20 never executed
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+call   21 never executed
+    $$$$$:  110-block 11
+    $$$$$:  110-block 12
+    =====:  111:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  111-block  0
+call    3 never executed
+    =====:  112:        catch (RepositoryException &ex) {
+    $$$$$:  112-block  0
+call    0 never executed
+    =====:  113:            QMessageBox::warning(this, "Warning", QString::fromStdString("Oferta inexistenta!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  113-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  113-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:  113-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  113-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  113-block  4
+call   18 never executed
+    $$$$$:  113-block  5
+    $$$$$:  113-block  6
+call   19 never executed
+    $$$$$:  113-block  7
+    $$$$$:  113-block  8
+call   20 never executed
+    $$$$$:  113-block  9
+    $$$$$:  113-block 10
+call   21 never executed
+    $$$$$:  113-block 11
+    $$$$$:  113-block 12
+    =====:  114:        }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  114-block  0
+call    3 never executed
+    #####:  115:        addButton(service.getAll());
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  115-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  116:    }
+    %%%%%:  116-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  116-block  1
+call    3 never executed
+    $$$$$:  116-block  2
+call    4 never executed
+    $$$$$:  116-block  3
+call    5 never executed
+        -:  117:
+function _ZN10OfertaGUI220sortOferteByDenumireEv called 0 returned 0% blocks executed 0%
+    #####:  118:    void sortOferteByDenumire() {
+    #####:  119:        vector<Oferta> oferte;
+    %%%%%:  119-block  0
+call    0 never executed
+    #####:  120:        if (radioDescresc->isChecked()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  120-block  0
+branch  3 never executed
+branch  4 never executed
+    #####:  121:            oferte = service.sortOferteByDenumire(true);
+    %%%%%:  121-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  121-block  1
+call    3 never executed
+call    4 never executed
+        -:  122:        }
+        -:  123:        else {
+    #####:  124:            oferte = service.sortOferteByDenumire(false);
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  124-block  1
+call    3 never executed
+call    4 never executed
+        -:  125:        }
+    #####:  126:        loadData(oferte);
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  127:    }
+    %%%%%:  127-block  0
+call    0 never executed
+    $$$$$:  127-block  1
+call    1 never executed
+function _ZN10OfertaGUI222sortOferteByDestinatieEv called 0 returned 0% blocks executed 0%
+    #####:  128:    void sortOferteByDestinatie(){
+    #####:  129:        vector<Oferta> oferte;
+    %%%%%:  129-block  0
+call    0 never executed
+    #####:  130:        if (radioDescresc->isChecked()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  130-block  0
+branch  3 never executed
+branch  4 never executed
+    #####:  131:            oferte = service.sortOferteByDestinatie(true);
+    %%%%%:  131-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  131-block  1
+call    3 never executed
+call    4 never executed
+        -:  132:        }
+        -:  133:        else {
+    #####:  134:            oferte = service.sortOferteByDestinatie(false);
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  134-block  1
+call    3 never executed
+call    4 never executed
+        -:  135:        }
+    #####:  136:        loadData(oferte);
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  137:    }
+    %%%%%:  137-block  0
+call    0 never executed
+    $$$$$:  137-block  1
+call    1 never executed
+function _ZN10OfertaGUI216sortOferteByPretEv called 0 returned 0% blocks executed 0%
+    #####:  138:    void sortOferteByPret(){
+    #####:  139:        vector<Oferta> oferte;
+    %%%%%:  139-block  0
+call    0 never executed
+    #####:  140:        if (radioDescresc->isChecked()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  140-block  0
+branch  3 never executed
+branch  4 never executed
+    #####:  141:            oferte = service.sortOferteByPret(true);
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  141-block  1
+call    3 never executed
+call    4 never executed
+        -:  142:        }
+        -:  143:        else {
+    #####:  144:            oferte = service.sortOferteByPret(false);
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  144-block  1
+call    3 never executed
+call    4 never executed
+        -:  145:        }
+    #####:  146:        loadData(oferte);
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  147:    }
+    %%%%%:  147-block  0
+call    0 never executed
+    $$$$$:  147-block  1
+call    1 never executed
+function _ZN10OfertaGUI215sortOferteByTipEv called 0 returned 0% blocks executed 0%
+    #####:  148:    void sortOferteByTip(){
+    #####:  149:        vector<Oferta> oferte;
+    %%%%%:  149-block  0
+call    0 never executed
+    #####:  150:        if (radioDescresc->isChecked()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  150-block  0
+branch  3 never executed
+branch  4 never executed
+    #####:  151:            oferte = service.sortOferteByTip(true);
+    %%%%%:  151-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  151-block  1
+call    3 never executed
+call    4 never executed
+        -:  152:        }
+        -:  153:        else {
+    #####:  154:            oferte = service.sortOferteByTip(false);
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  154-block  1
+call    3 never executed
+call    4 never executed
+        -:  155:        }
+    #####:  156:        loadData(oferte);
+    %%%%%:  156-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  157:    }
+    %%%%%:  157-block  0
+call    0 never executed
+    $$$$$:  157-block  1
+call    1 never executed
+        -:  158:
+function _ZN10OfertaGUI24undoEv called 0 returned 0% blocks executed 0%
+    #####:  159:    void undo(){
+        -:  160:        try {
+    #####:  161:            service.doUndo();
+    %%%%%:  161-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  162:            vector<Oferta> oferte = service.getAll();
+    %%%%%:  162-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  162-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  163:            loadData(service.getAll());
+    %%%%%:  163-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  163-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  164:        }
+    %%%%%:  164-block  0
+call    0 never executed
+    $$$$$:  164-block  1
+call    1 never executed
+    =====:  165:        catch (RepositoryException &ex) {
+    $$$$$:  165-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  165-block  1
+call    2 never executed
+    =====:  166:            QMessageBox::warning(this, "Warning", QString::fromStdString("Nu se mai poate face undo!"));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  166-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  166-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:  166-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  166-block  3
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  166-block  4
+call   18 never executed
+    $$$$$:  166-block  5
+    $$$$$:  166-block  6
+call   19 never executed
+    $$$$$:  166-block  7
+    $$$$$:  166-block  8
+call   20 never executed
+    $$$$$:  166-block  9
+    $$$$$:  166-block 10
+call   21 never executed
+    $$$$$:  166-block 11
+    $$$$$:  166-block 12
+    =====:  167:        }
+call    0 never executed
+    $$$$$:  167-block  0
+call    1 never executed
+    #####:  168:    }
+    %%%%%:  168-block  0
+        -:  169:
+        -:  170:private:
+        -:  171:    Service& service;
+        -:  172:    QListWidget* lst = new QListWidget{};
+        -:  173:    QPushButton* btnExit = new QPushButton{"&Exit"};
+        -:  174:    QPushButton* btnAdd = new QPushButton{"&Add"};
+        -:  175:    QPushButton* btnRemove = new QPushButton{"&Remove"};
+        -:  176:    QPushButton* btnUpdate = new QPushButton{"&Update"};
+        -:  177:    QPushButton* btnSortDenumire = new QPushButton{"&Sort by Denumire"};
+        -:  178:    QPushButton* btnSortDestinatie = new QPushButton{"&Sort by Destinatie"};
+        -:  179:    QPushButton* btnSortPret = new QPushButton{"&Sort by Pret"};
+        -:  180:    QPushButton* btnSortTip = new QPushButton{"&Sort by Tip"};
+        -:  181:    QPushButton* btnUndo = new QPushButton{"&Undo"};
+        -:  182:    QPushButton* btnRefresh = new QPushButton{"&Refresh"};
+        -:  183:    QLineEdit* txtDenumire = new QLineEdit{};
+        -:  184:    QLineEdit* txtDestinatie = new QLineEdit{};
+        -:  185:    QLineEdit* txtPret = new QLineEdit{};
+        -:  186:    QLineEdit* txtTip = new QLineEdit{};
+        -:  187:
+        -:  188:    QGridLayout* grid = new QGridLayout{};
+        -:  189:    QRadioButton* radioCresc = new QRadioButton{"Crescator"};
+        -:  190:    QRadioButton* radioDescresc = new QRadioButton{"Descrescator"};
+        -:  191:
+        -:  192:    QRegularExpression rx{ "[0-9]+\\s+[0-9]+" };
+        -:  193:    QValidator* validator = new QRegularExpressionValidator(rx, this);
+        -:  194:
+function _ZN10OfertaGUI211initConnectEv called 1 returned 100% blocks executed 100%
+        1:  195:    void initConnect(){
+function _ZZN10OfertaGUI211initConnectEvENKUlvE_clEv called 0 returned 0% blocks executed 0%
+       1*:  196:        QObject::connect(btnExit, &QPushButton::clicked, [&]() {
+        1:  196-block  0
+call    0 returned 1
+call    1 returned 1
+    #####:  197:            qDebug()<<"Exit";
+    %%%%%:  197-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  197-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  197-block  2
+call    7 never executed
+    $$$$$:  197-block  3
+call    8 never executed
+    $$$$$:  197-block  4
+    $$$$$:  197-block  5
+call    9 never executed
+    #####:  198:        QMessageBox::information(this,"Info","Aplicatia a fost deschisa cu succes!");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  198-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  198-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  198-block  2
+call   10 never executed
+call   11 never executed
+    $$$$$:  198-block  3
+call   12 never executed
+    $$$$$:  198-block  4
+    $$$$$:  198-block  5
+call   13 never executed
+    $$$$$:  198-block  6
+    #####:  199:        QWidget::close();
+call    0 never executed
+    #####:  200:        });
+        1:  201:        QObject::connect(btnAdd, &QPushButton::clicked, this, &OfertaGUI2::addOferta);
+call    0 returned 1
+call    1 returned 1
+        1:  202:        QObject::connect(btnRemove, &QPushButton::clicked, this, &OfertaGUI2::removeOferta);
+call    0 returned 1
+call    1 returned 1
+        1:  203:        QObject::connect(btnUpdate, &QPushButton::clicked, this, &OfertaGUI2::updateOferta);
+call    0 returned 1
+call    1 returned 1
+        1:  204:        QObject::connect(btnSortDenumire, &QPushButton::clicked, this, &OfertaGUI2::sortOferteByDenumire);
+call    0 returned 1
+call    1 returned 1
+        1:  205:        QObject::connect(btnSortDestinatie, &QPushButton::clicked, this, &OfertaGUI2::sortOferteByDestinatie);
+call    0 returned 1
+call    1 returned 1
+        1:  206:        QObject::connect(btnSortPret, &QPushButton::clicked, this, &OfertaGUI2::sortOferteByPret);
+call    0 returned 1
+call    1 returned 1
+        1:  207:        QObject::connect(btnSortTip, &QPushButton::clicked, this, &OfertaGUI2::sortOferteByTip);
+call    0 returned 1
+call    1 returned 1
+        1:  208:        QObject::connect(btnUndo, &QPushButton::clicked, this, &OfertaGUI2::undo);
+call    0 returned 1
+call    1 returned 1
+function _ZZN10OfertaGUI211initConnectEvENKUlvE0_clEv called 0 returned 0% blocks executed 0%
+       1*:  209:        QObject::connect(btnRefresh,&QPushButton::clicked,[&](){
+call    0 returned 1
+call    1 returned 1
+    #####:  210:            txtDenumire->setText("");
+    %%%%%:  210-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  210-block  1
+call    4 never executed
+    $$$$$:  210-block  2
+call    5 never executed
+    $$$$$:  210-block  3
+call    6 never executed
+    #####:  211:            txtDestinatie->setText("");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  211-block  0
+call    4 never executed
+    $$$$$:  211-block  1
+call    5 never executed
+    $$$$$:  211-block  2
+call    6 never executed
+    #####:  212:            txtPret->setText("");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  212-block  0
+call    4 never executed
+    $$$$$:  212-block  1
+call    5 never executed
+    $$$$$:  212-block  2
+call    6 never executed
+    #####:  213:            txtTip->setText("");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  213-block  0
+call    4 never executed
+    $$$$$:  213-block  1
+call    5 never executed
+    #####:  214:        });
+function _ZZN10OfertaGUI211initConnectEvENKUlvE1_clEv called 0 returned 0% blocks executed 0%
+       1*:  215:        QObject::connect(btnRefresh, &QPushButton::pressed, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  216:            QPalette pal = btnRefresh->palette();
+    %%%%%:  216-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  216-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  217:            btnRefresh->setFlat(true);
+    %%%%%:  217-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  218:            pal.setColor(QPalette::Button, QColor(Qt::green));
+    %%%%%:  218-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  218-block  1
+    #####:  219:            btnRefresh->setAutoFillBackground(true);
+    %%%%%:  219-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  220:            btnRefresh->setPalette(pal);
+    %%%%%:  220-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  221:            btnRefresh->update();
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  222:        });
+    %%%%%:  222-block  0
+call    0 never executed
+    $$$$$:  222-block  1
+call    1 never executed
+function _ZZN10OfertaGUI211initConnectEvENKUlvE2_clEv called 0 returned 0% blocks executed 0%
+       1*:  223:        QObject::connect(btnRefresh, &QPushButton::released, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  224:            QPalette pal = btnRefresh->palette();
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  224-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  225:            btnRefresh->setFlat(true);
+    %%%%%:  225-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  226:            pal.setColor(QPalette::Button, QColor(Qt::white));
+    %%%%%:  226-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  226-block  1
+    #####:  227:            btnRefresh->setAutoFillBackground(true);
+    %%%%%:  227-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  228:            btnRefresh->setPalette(pal);
+    %%%%%:  228-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  229:            btnRefresh->update();
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  230:        });
+    %%%%%:  230-block  0
+call    0 never executed
+    $$$$$:  230-block  1
+call    1 never executed
+function _ZZN10OfertaGUI211initConnectEvENKUlvE3_clEv called 0 returned 0% blocks executed 0%
+       1*:  231:        QObject::connect(lst,&QListWidget::itemSelectionChanged, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  232:            auto selected = lst->selectedItems();
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  233:            if (selected.isEmpty()) {
+    %%%%%:  233-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  234:                txtDenumire->setText("");
+    %%%%%:  234-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  234-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  234-block  2
+call    6 never executed
+    $$$$$:  234-block  3
+call    7 never executed
+    $$$$$:  234-block  4
+    #####:  235:                txtDestinatie->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  235-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  235-block  1
+call    6 never executed
+    $$$$$:  235-block  2
+call    7 never executed
+    $$$$$:  235-block  3
+    #####:  236:                txtPret->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  236-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  236-block  1
+call    6 never executed
+    $$$$$:  236-block  2
+call    7 never executed
+    $$$$$:  236-block  3
+    #####:  237:                txtTip->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  237-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  237-block  1
+call    6 never executed
+    $$$$$:  237-block  2
+call    7 never executed
+    $$$$$:  237-block  3
+    #####:  238:                return;
+        -:  239:            }
+        -:  240:           else{
+    #####:  241:                auto selItem = selected.at(0);
+    %%%%%:  241-block  0
+call    0 never executed
+    #####:  242:                auto denumire = selItem->text();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  243:                txtDenumire->setText(denumire);
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:                auto oferte = service.getAll();
+    %%%%%:  244-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  244-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  245:                int index_oferta = service.find(denumire.toStdString());
+    %%%%%:  245-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  245-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  245-block  2
+call    6 never executed
+    $$$$$:  245-block  3
+call    7 never executed
+    $$$$$:  245-block  4
+    #####:  246:                auto oferta = oferte[index_oferta];
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  247:                txtDenumire->setText(QString::fromStdString(oferta.getDenumire()));
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  247-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  247-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  247-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:  247-block  4
+call   11 never executed
+    $$$$$:  247-block  5
+    $$$$$:  247-block  6
+call   12 never executed
+    $$$$$:  247-block  7
+    #####:  248:                txtDestinatie->setText(QString::fromStdString(oferta.getDestinatie()));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  248-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  248-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  248-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  248-block  3
+call   11 never executed
+    $$$$$:  248-block  4
+    $$$$$:  248-block  5
+call   12 never executed
+    $$$$$:  248-block  6
+    #####:  249:                txtPret->setText(QString::fromStdString(to_string(oferta.getPret())));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  249-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  249-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  249-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  249-block  3
+call   12 never executed
+call   13 never executed
+    $$$$$:  249-block  4
+call   14 never executed
+    $$$$$:  249-block  5
+    $$$$$:  249-block  6
+call   15 never executed
+    $$$$$:  249-block  7
+    #####:  250:                txtTip->setText(QString::fromStdString(oferta.getTip()));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  250-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  250-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  250-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  250-block  3
+call   11 never executed
+    $$$$$:  250-block  4
+    $$$$$:  250-block  5
+call   12 never executed
+    $$$$$:  250-block  6
+    #####:  251:           }
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  251-block  0
+call    3 never executed
+    $$$$$:  251-block  1
+call    4 never executed
+    $$$$$:  251-block  2
+call    5 never executed
+    #####:  252:        });
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  252-block  1
+call    3 never executed
+        1:  253:    }
+function _ZN10OfertaGUI28loadDataERKSt6vectorI6OfertaSaIS1_EE called 1 returned 100% blocks executed 70%
+        1:  254:    void loadData(const vector<Oferta>& oferte) {
+        1:  255:        lst->clear();
+        1:  255-block  0
+call    0 returned 1
+        3:  256:        for (const auto& oferta : oferte) {
+call    0 returned 1
+call    1 returned 1
+        2:  256-block  0
+call    2 returned 2
+        3:  256-block  1
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  257:            lst->addItem(QString::fromStdString(oferta.getDenumire()));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  257-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  257-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  257-block  2
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:  257-block  3
+call   12 never executed
+    $$$$$:  257-block  4
+    $$$$$:  257-block  5
+call   13 never executed
+    $$$$$:  257-block  6
+        -:  258:        }
+        1:  259:    }
+        1:  259-block  0
+function _ZN10OfertaGUI29addButtonERKSt6vectorI6OfertaSaIS1_EE called 1 returned 100% blocks executed 72%
+        1:  260:    void addButton(const std::vector<Oferta>& oferte) {
+        -:  261:
+        1:  262:        map <string, vector<Oferta>> denumiri_oferte;
+        1:  262-block  0
+call    0 returned 1
+        -:  263:        //Empty the button layout
+        -:  264:        QLayoutItem* item;
+        3:  265:        while ((item = grid->takeAt(0)) != nullptr) {
+        3:  265-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  265-block  1
+branch  3 taken 2
+branch  4 taken 1 (fallthrough)
+        2:  266:            delete item->widget();
+        2:  266-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  266-block  1
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0
+        2:  266-block  2
+call    5 returned 2
+        2:  267:            delete item;
+        2:  267-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:  267-block  1
+call    2 returned 2
+        -:  268:        }
+        -:  269:
+        -:  270:
+        3:  271:        for(const auto& oferta : oferte) {
+        1:  271-block  0
+call    0 returned 1
+call    1 returned 1
+        2:  271-block  1
+call    2 returned 2
+        3:  271-block  2
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  272:            denumiri_oferte[oferta.getDenumire()].push_back(oferta);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  272-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  272-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  272-block  2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:  272-block  3
+call   11 never executed
+    $$$$$:  272-block  4
+        -:  273:        }
+        3:  274:        for(const auto& denumire : denumiri_oferte) {
+        1:  274-block  0
+call    0 returned 1
+call    1 returned 1
+        2:  274-block  1
+call    2 returned 2
+        3:  274-block  2
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  275:            auto btn = new QPushButton{QString::fromStdString(denumire.first)};
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  275-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  275-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  275-block  2
+call    9 returned 2
+    $$$$$:  275-block  3
+call   10 never executed
+    $$$$$:  275-block  4
+call   11 never executed
+    $$$$$:  275-block  5
+        2:  276:            grid->addWidget(btn);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+function _ZZN10OfertaGUI29addButtonERKSt6vectorI6OfertaSaIS1_EEENKUlvE_clEv called 0 returned 0% blocks executed 0%
+       2*:  277:            QObject::connect(btn, &QPushButton::clicked, [this, denumire, oferte]() {
+        2:  277-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  277-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  277-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  277-block  3
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:  277-block  4
+call   12 never executed
+    $$$$$:  277-block  5
+    #####:  278:                int nr_oferte = std::count_if(oferte.begin(), oferte.end(),
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  278-block  0
+call    5 never executed
+    $$$$$:  278-block  1
+call    6 never executed
+function _ZZZN10OfertaGUI29addButtonERKSt6vectorI6OfertaSaIS1_EEENKUlvE_clEvENKUlRKS1_E_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  279:                                              [denumire](const Oferta& o)   {
+    %%%%%:  279-block  0
+call    0 never executed
+    #####:  280:                                                    return o.getDenumire() == denumire.first;
+    %%%%%:  280-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  281:                                              });
+    %%%%%:  281-block  0
+call    0 never executed
+        -:  282:
+    #####:  283:                QMessageBox::information(nullptr, "Numar oferte", "Numarul de oferte pentru " + QString::fromStdString(denumire.first) + " este " + QString::number(nr_oferte));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  283-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  283-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  283-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  283-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  283-block  4
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  283-block  5
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+    %%%%%:  283-block  6
+call   22 never executed
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+    $$$$$:  283-block  7
+call   28 never executed
+    $$$$$:  283-block  8
+    $$$$$:  283-block  9
+call   29 never executed
+    $$$$$:  283-block 10
+    $$$$$:  283-block 11
+call   30 never executed
+    $$$$$:  283-block 12
+    $$$$$:  283-block 13
+call   31 never executed
+    $$$$$:  283-block 14
+    $$$$$:  283-block 15
+call   32 never executed
+    $$$$$:  283-block 16
+    $$$$$:  283-block 17
+call   33 never executed
+    $$$$$:  283-block 18
+    #####:  284:            });
+        -:  285:        }
+        1:  286:    }
+        1:  286-block  0
+call    0 returned 1
+    $$$$$:  286-block  1
+call    1 never executed
+        -:  287:
+        -:  288:
+function _ZN10OfertaGUI27initGUIEv called 1 returned 100% blocks executed 55%
+        1:  289:    void initGUI() {
+        1:  290:        QVBoxLayout *mainLayout = new QVBoxLayout{};
+        1:  290-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  290-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  290-block  2
+call    6 never executed
+        1:  291:        QWidget::setLayout(mainLayout);
+        1:  291-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  292:
+        1:  293:        QHBoxLayout *ly1 = new QHBoxLayout{};
+        1:  293-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  293-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  293-block  2
+call    6 never executed
+        -:  294:
+        1:  295:        QVBoxLayout *stgLy = new QVBoxLayout{};
+        1:  295-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  295-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  295-block  2
+call    6 never executed
+        1:  296:        stgLy->addWidget(lst);
+        1:  296-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  296-block  1
+        -:  297:
+        1:  298:        QVBoxLayout *drLy = new QVBoxLayout{};
+        1:  298-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  298-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  298-block  2
+call    6 never executed
+        1:  299:        QHBoxLayout *josLy = new QHBoxLayout{};
+        1:  299-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  299-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  299-block  2
+call    6 never executed
+        -:  300:
+        1:  301:        vector<QPushButton*> btns;
+        1:  301-block  0
+call    0 returned 1
+        -:  302:
+        1:  303:        auto formLy = new QFormLayout{};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  303-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  303-block  1
+call    6 never executed
+        1:  304:        formLy->addRow("Denumire", txtDenumire);
+        1:  304-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  304-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  304-block  2
+call    6 returned 1
+    $$$$$:  304-block  3
+call    7 never executed
+    $$$$$:  304-block  4
+        1:  305:        formLy->addRow("Destinatie", txtDestinatie);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  305-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  305-block  1
+call    6 returned 1
+    $$$$$:  305-block  2
+call    7 never executed
+    $$$$$:  305-block  3
+        1:  306:        formLy->addRow("Pret", txtPret);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  306-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  306-block  1
+call    6 returned 1
+    $$$$$:  306-block  2
+call    7 never executed
+    $$$$$:  306-block  3
+        1:  307:        formLy->addRow("Tip", txtTip);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  307-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  307-block  1
+call    6 returned 1
+    $$$$$:  307-block  2
+call    7 never executed
+    $$$$$:  307-block  3
+        1:  308:        txtDenumire->setPlaceholderText("Introduceti denumirea");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  308-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  308-block  1
+call    6 returned 1
+    $$$$$:  308-block  2
+call    7 never executed
+    $$$$$:  308-block  3
+        1:  309:        txtDestinatie->setPlaceholderText("Introduceti destinatia");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  309-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  309-block  1
+call    6 returned 1
+    $$$$$:  309-block  2
+call    7 never executed
+    $$$$$:  309-block  3
+        1:  310:        txtPret->setPlaceholderText("Introduceti pretul");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  310-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  310-block  1
+call    6 returned 1
+    $$$$$:  310-block  2
+call    7 never executed
+    $$$$$:  310-block  3
+        1:  311:        txtPret->setValidator(validator);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  312:        txtTip->setPlaceholderText("Introduceti tipul");
+        1:  312-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  312-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  312-block  2
+call    6 returned 1
+    $$$$$:  312-block  3
+call    7 never executed
+    $$$$$:  312-block  4
+        1:  313:        drLy->addLayout(formLy);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  314:
+        1:  315:        auto lyBtn = new QHBoxLayout{};
+        1:  315-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  315-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  315-block  2
+call    6 never executed
+        1:  316:        auto lyBtn2 = new QHBoxLayout{};
+        1:  316-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  316-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  316-block  2
+call    6 never executed
+        1:  317:        auto lyBtn3 = new QHBoxLayout{};
+        1:  317-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  317-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  317-block  2
+call    6 never executed
+        1:  318:        lyBtn->addWidget(btnAdd);
+        1:  318-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  318-block  1
+        1:  319:        lyBtn->addWidget(btnRemove);
+        1:  319-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  319-block  1
+        1:  320:        lyBtn->addWidget(btnUpdate);
+        1:  320-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  320-block  1
+        1:  321:        drLy->addLayout(lyBtn);
+        1:  321-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  322:
+        1:  323:        auto hBtn = new QHBoxLayout{};
+        1:  323-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  323-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  323-block  2
+call    6 never executed
+        1:  324:        hBtn->addWidget(btnUndo);
+        1:  324-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  324-block  1
+        1:  325:        hBtn->addWidget(btnRefresh);
+        1:  325-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  325-block  1
+        -:  326:
+        1:  327:        drLy->addLayout(hBtn);
+        1:  327-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  328:
+        1:  329:        lyBtn2->addWidget(btnSortDenumire);
+        1:  329-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  329-block  1
+        1:  330:        lyBtn2->addWidget(btnSortDestinatie);
+        1:  330-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  330-block  1
+        1:  331:        lyBtn2->addWidget(btnSortPret);
+        1:  331-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  331-block  1
+        1:  332:        lyBtn2->addWidget(btnSortTip);
+        1:  332-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  332-block  1
+        -:  333:
+        1:  334:        stgLy->addLayout(lyBtn2);
+        1:  334-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  335:
+        1:  336:        grid->addWidget(radioCresc, 0, 0);
+        1:  336-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  336-block  1
+        1:  337:        grid->addWidget(radioDescresc, 0, 1);
+        1:  337-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  337-block  1
+        1:  338:        stgLy->addLayout(grid);
+        1:  338-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  339:
+        1:  340:        josLy->addWidget(btnExit);
+        1:  340-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  340-block  1
+        -:  341:
+        1:  342:        ly1->addLayout(stgLy);
+        1:  342-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  343:        ly1->addLayout(drLy);
+        1:  343-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  344:
+        1:  345:        mainLayout->addLayout(ly1);
+        1:  345-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  346:        mainLayout->addWidget(btnExit);
+        1:  346-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  346-block  1
+        1:  347:        btnExit->setStyleSheet("background-color: red; color: white;");
+        1:  347-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  347-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  347-block  2
+call    6 returned 1
+    $$$$$:  347-block  3
+call    7 never executed
+    $$$$$:  347-block  4
+        1:  348:        btnExit->setFont(QFont("Times", 14, QFont::Bold));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  348-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  348-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  348-block  2
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  348-block  3
+call   11 never executed
+    $$$$$:  348-block  4
+    $$$$$:  348-block  5
+call   12 never executed
+    $$$$$:  348-block  6
+        -:  349:
+        -:  350:        // setarea culorilor si fontului pentru butonul btnAdd
+        1:  351:        btnAdd->setStyleSheet("background-color: blue; color: white;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  351-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  351-block  1
+call    6 returned 1
+    $$$$$:  351-block  2
+call    7 never executed
+    $$$$$:  351-block  3
+        1:  352:        btnAdd->setFont(QFont("Arial", 12));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  352-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  352-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  352-block  2
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  352-block  3
+call   11 never executed
+    $$$$$:  352-block  4
+    $$$$$:  352-block  5
+call   12 never executed
+    $$$$$:  352-block  6
+        -:  353:
+        -:  354:        // setarea culorilor si fontului pentru butonul btnRemove
+        1:  355:        btnRemove->setStyleSheet("background-color: blue; color: white;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  355-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  355-block  1
+call    6 returned 1
+    $$$$$:  355-block  2
+call    7 never executed
+    $$$$$:  355-block  3
+        1:  356:        btnRemove->setFont(QFont("Arial",12));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  356-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  356-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  356-block  2
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  356-block  3
+call   11 never executed
+    $$$$$:  356-block  4
+    $$$$$:  356-block  5
+call   12 never executed
+    $$$$$:  356-block  6
+        -:  357:
+        1:  358:        btnUpdate->setStyleSheet("background-color: blue; color: white;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  358-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  358-block  1
+call    6 returned 1
+    $$$$$:  358-block  2
+call    7 never executed
+    $$$$$:  358-block  3
+        1:  359:        btnUpdate->setFont(QFont("Arial",12));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  359-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  359-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  359-block  2
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  359-block  3
+call   11 never executed
+    $$$$$:  359-block  4
+    $$$$$:  359-block  5
+call   12 never executed
+    $$$$$:  359-block  6
+        -:  360:
+        1:  361:        btnSortDenumire->setStyleSheet("background-color: pink; color: purple;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  361-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  361-block  1
+call    6 returned 1
+    $$$$$:  361-block  2
+call    7 never executed
+    $$$$$:  361-block  3
+        1:  362:        btnSortDestinatie->setStyleSheet("background-color: pink; color: purple;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  362-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  362-block  1
+call    6 returned 1
+    $$$$$:  362-block  2
+call    7 never executed
+    $$$$$:  362-block  3
+        1:  363:        btnSortPret->setStyleSheet("background-color: pink; color: purple;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  363-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  363-block  1
+call    6 returned 1
+    $$$$$:  363-block  2
+call    7 never executed
+    $$$$$:  363-block  3
+        1:  364:        btnSortTip->setStyleSheet("background-color: pink; color: purple;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  364-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  364-block  1
+call    6 returned 1
+    $$$$$:  364-block  2
+call    7 never executed
+    $$$$$:  364-block  3
+        -:  365:
+        1:  366:        btnRefresh->setStyleSheet("background-color: blue; color: black;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  366-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  366-block  1
+call    6 returned 1
+    $$$$$:  366-block  2
+call    7 never executed
+    $$$$$:  366-block  3
+        1:  367:        btnUndo->setStyleSheet("background-color: blue; color: black;");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  367-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  367-block  1
+call    6 returned 1
+    $$$$$:  367-block  2
+call    7 never executed
+    $$$$$:  367-block  3
+        -:  368:
+        1:  369:        QFont font{"Verdana", 11, QFont::Bold}; // Crearea unui font cu familia "Verdana", dimensiunea 11 și stilul Bold
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  369-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  369-block  1
+        1:  370:        txtDenumire->setFont(font); // Setarea noului font pentru caseta txtDenumire
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  371:        txtDestinatie->setFont(font); // Setarea noului font pentru caseta txtDestinatie
+        1:  371-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  372:        txtPret->setFont(font); // Setarea noului font pentru caseta txtPret
+        1:  372-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  373:        txtTip->setFont(font); // Setarea noului font pentru caseta txtTip
+        1:  373-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  374:
+        1:  375:        QFont font2("Arial", 10, QFont::Bold); //crearea unui obiect font
+        1:  375-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  375-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  375-block  2
+        1:  376:        radioCresc->setFont(font2); //setarea fontului pentru butonul radio
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  377:        radioDescresc->setFont(font2);
+        1:  377-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  378:
+        -:  379:
+        1:  380:    }
+        1:  380-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  380-block  1
+call    3 never executed
+    $$$$$:  380-block  2
+call    4 never executed
+    $$$$$:  380-block  3
+call    5 never executed
+        -:  381:
+        -:  382:
+        -:  383:};

@@ -1,0 +1,1175 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/UI.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\UI.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "UI.h"
+        -:    6:
+function _ZN2UI9printMenuEv called 0 returned 0% blocks executed 0%
+    #####:    7:void UI::printMenu() {
+    #####:    8:    cout << "1. Add oferta" << endl;
+    %%%%%:    8-block  0
+call    0 never executed
+call    1 never executed
+    #####:    9:    cout << "2. Remove oferta" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   10:    cout << "3. Update oferta" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   11:    cout << "4. Print all oferte" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   12:    cout << "5. Print oferte by denumire" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   13:    cout << "6. Print oferte by destinatie" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   14:    cout << "7. Print sorted oferte by denumire" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   15:    cout << "8. Print sorted oferte by destinatie" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   16:    cout << "9. Print sorted oferte by pret" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   17:    cout << "10. Print sorted oferte by tip" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   18:    cout << "11. Add oferta to watchlist" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   19:    cout << "12. Delete oferta from watchlist" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   20:    cout << "13. Generate watchlist" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   21:    cout << "14. Save watchlist to file" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   22:    cout << "15. Print watchlist" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   23:    cout << "16. Undo" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   24:    cout << "0. Exit" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   25:}
+        -:   26:
+function _ZN2UI9addOfertaEv called 0 returned 0% blocks executed 0%
+    #####:   27:void UI::addOferta() {
+    #####:   28:    string denumire, destinatie, tip;
+    %%%%%:   28-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   29:    int pret;
+    #####:   30:    cout << "Enter denumire: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   31:    cin >> denumire;
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   32:    cout << "Enter destinatie: ";
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   33:    cin >> destinatie;
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   34:    cout << "Enter pret: ";
+    %%%%%:   34-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   35:    cin >> pret;
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36:    cout << "Enter tip: ";
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   37:    cin >> tip;
+    %%%%%:   37-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   38:    try {
+    #####:   39:        this->service.addOferta(denumire, destinatie, pret, tip);
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   40:    }
+    =====:   41:    catch (const ValidationException &exception) {
+    $$$$$:   41-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   41-block  1
+call    3 never executed
+    =====:   42:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   42-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   43:    }
+    $$$$$:   43-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   43-block  1
+call    3 never executed
+    =====:   44:    catch (const RepositoryException &exception) {
+    $$$$$:   44-block  0
+call    0 never executed
+    =====:   45:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   45-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   46:    }
+    $$$$$:   46-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   46-block  1
+call    3 never executed
+    #####:   47:}
+    %%%%%:   47-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   47-block  1
+call    3 never executed
+    $$$$$:   47-block  2
+call    4 never executed
+    $$$$$:   47-block  3
+call    5 never executed
+        -:   48:
+function _ZN2UI12removeOfertaEv called 0 returned 0% blocks executed 0%
+    #####:   49:void UI::removeOferta() {
+    #####:   50:    string denumire, destinatie, tip;
+    %%%%%:   50-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   51:    int pret;
+    #####:   52:    cout << "Enter denumire: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   53:    cin >> denumire;
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   54:    cout << "Enter destinatie: ";
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   55:    cin >> destinatie;
+    %%%%%:   55-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   56:    cout << "Enter pret: ";
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   57:    cin >> pret;
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   58:    cout << "Enter tip: ";
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   59:    cin >> tip;
+    %%%%%:   59-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   60:    try {
+    #####:   61:        this->service.removeOferta(denumire, destinatie, pret, tip);
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   62:    }
+    =====:   63:    catch (const ValidationException &exception) {
+    $$$$$:   63-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   63-block  1
+call    3 never executed
+    =====:   64:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   64-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   65:    }
+    $$$$$:   65-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   65-block  1
+call    3 never executed
+    =====:   66:    catch (const RepositoryException &exception) {
+    $$$$$:   66-block  0
+call    0 never executed
+    =====:   67:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   67-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   68:    }
+    $$$$$:   68-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   68-block  1
+call    3 never executed
+    #####:   69:}
+    %%%%%:   69-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   69-block  1
+call    3 never executed
+    $$$$$:   69-block  2
+call    4 never executed
+    $$$$$:   69-block  3
+call    5 never executed
+        -:   70:
+function _ZN2UI12updateOfertaEv called 0 returned 0% blocks executed 0%
+    #####:   71:void UI::updateOferta() {
+    #####:   72:    string denumire, destinatie, tip;
+    %%%%%:   72-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   73:    int pret;
+    #####:   74:    cout << "Enter denumire: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:    cin >> denumire;
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:    cout << "Enter destinatie: ";
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:    cin >> destinatie;
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   78:    cout << "Enter pret: ";
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:    cin >> pret;
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:    cout << "Enter tip: ";
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   81:    cin >> tip;
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   82:    try {
+    #####:   83:        this->service.updateOferta(denumire, destinatie, pret, tip);
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   84:    }
+    =====:   85:    catch (const ValidationException &exception) {
+    $$$$$:   85-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   85-block  1
+call    3 never executed
+    =====:   86:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   86-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   87:    }
+    $$$$$:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   87-block  1
+call    3 never executed
+    =====:   88:    catch (const RepositoryException &exception) {
+    $$$$$:   88-block  0
+call    0 never executed
+    =====:   89:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   89-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   90:    }
+    $$$$$:   90-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   90-block  1
+call    3 never executed
+    #####:   91:}
+    %%%%%:   91-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   91-block  1
+call    3 never executed
+    $$$$$:   91-block  2
+call    4 never executed
+    $$$$$:   91-block  3
+call    5 never executed
+        -:   92:
+function _ZN2UI14printAllOferteEv called 0 returned 0% blocks executed 0%
+    #####:   93:void UI::printAllOferte() {
+    #####:   94:    vector<Oferta> oferte = this->service.getAll();
+    %%%%%:   94-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   94-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   95:    for (const Oferta& oferta : oferte) {
+    %%%%%:   95-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   95-block  1
+call    2 never executed
+    %%%%%:   95-block  2
+call    3 never executed
+    %%%%%:   95-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   96:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   96-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   97:    }
+    #####:   98:}
+    %%%%%:   98-block  0
+call    0 never executed
+    $$$$$:   98-block  1
+call    1 never executed
+        -:   99:
+function _ZN2UI21printOferteByDenumireEv called 0 returned 0% blocks executed 0%
+    #####:  100:void UI::printOferteByDenumire() {
+    #####:  101:    string denumire;
+    %%%%%:  101-block  0
+call    0 never executed
+    #####:  102:    cout << "Enter denumire: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  103:    cin >> denumire;
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  104:    vector<Oferta> oferte = this->service.getOferteByDenumire(denumire);
+    %%%%%:  104-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  105:    for (const Oferta& oferta : oferte) {
+    %%%%%:  105-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  105-block  1
+call    2 never executed
+    %%%%%:  105-block  2
+call    3 never executed
+    %%%%%:  105-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  106:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  106-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  107:    }
+    #####:  108:}
+    %%%%%:  108-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  108-block  1
+call    2 never executed
+    $$$$$:  108-block  2
+call    3 never executed
+        -:  109:
+function _ZN2UI17printOferteByPretEv called 0 returned 0% blocks executed 0%
+    #####:  110:void UI::printOferteByPret() {
+        -:  111:    int pret;
+    #####:  112:    cout << "Enter pret: ";
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  113:    cin >> pret;
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:    vector<Oferta> oferte = this->service.getOferteByPret(pret);
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  115:    for (const Oferta& oferta : oferte) {
+    %%%%%:  115-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  115-block  1
+call    2 never executed
+    %%%%%:  115-block  2
+call    3 never executed
+    %%%%%:  115-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  116:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  116-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  117:    }
+    #####:  118:}
+    %%%%%:  118-block  0
+call    0 never executed
+    $$$$$:  118-block  1
+call    1 never executed
+        -:  119:
+function _ZN2UI27printSortedOferteByDenumireEv called 0 returned 0% blocks executed 0%
+    #####:  120:void UI::printSortedOferteByDenumire() {
+        -:  121:    bool ascending;
+    #####:  122:    cout << "Ascending? (1/0): ";
+    %%%%%:  122-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  123:    cin >> ascending;
+    %%%%%:  123-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  124:    vector<Oferta> oferte = this->service.sortOferteByDenumire(ascending);
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  125:    for (const Oferta& oferta : oferte) {
+    %%%%%:  125-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  125-block  1
+call    2 never executed
+    %%%%%:  125-block  2
+call    3 never executed
+    %%%%%:  125-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  126:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  126-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  127:    }
+    #####:  128:}
+    %%%%%:  128-block  0
+call    0 never executed
+    $$$$$:  128-block  1
+call    1 never executed
+        -:  129:
+function _ZN2UI29printSortedOferteByDestinatieEv called 0 returned 0% blocks executed 0%
+    #####:  130:void UI::printSortedOferteByDestinatie() {
+        -:  131:    bool ascending;
+    #####:  132:    cout << "Ascending? (1/0): ";
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  133:    cin >> ascending;
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  134:    vector<Oferta> oferte = this->service.sortOferteByDestinatie(ascending);
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  135:    for (const Oferta& oferta : oferte) {
+    %%%%%:  135-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  135-block  1
+call    2 never executed
+    %%%%%:  135-block  2
+call    3 never executed
+    %%%%%:  135-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  136:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  136-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  137:    }
+    #####:  138:}
+    %%%%%:  138-block  0
+call    0 never executed
+    $$$$$:  138-block  1
+call    1 never executed
+        -:  139:
+function _ZN2UI23printSortedOferteByPretEv called 0 returned 0% blocks executed 0%
+    #####:  140:void UI::printSortedOferteByPret(){
+        -:  141:    bool ascending;
+    #####:  142:    cout << "Ascending? (1/0): ";
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  143:    cin >> ascending;
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  144:    vector<Oferta> oferte = this->service.sortOferteByPret(ascending);
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  145:    for (const Oferta& oferta : oferte) {
+    %%%%%:  145-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  145-block  1
+call    2 never executed
+    %%%%%:  145-block  2
+call    3 never executed
+    %%%%%:  145-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  146:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  146-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  147:    }
+    #####:  148:}
+    %%%%%:  148-block  0
+call    0 never executed
+    $$$$$:  148-block  1
+call    1 never executed
+        -:  149:
+function _ZN2UI22printSortedOferteByTipEv called 0 returned 0% blocks executed 0%
+    #####:  150:void UI::printSortedOferteByTip() {
+        -:  151:    bool ascending;
+    #####:  152:    cout << "Ascending? (1/0): ";
+    %%%%%:  152-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  153:    cin >> ascending;
+    %%%%%:  153-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  154:    vector<Oferta> oferte = this->service.sortOferteByTip(ascending);
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  155:    for (const Oferta& oferta : oferte) {
+    %%%%%:  155-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  155-block  1
+call    2 never executed
+    %%%%%:  155-block  2
+call    3 never executed
+    %%%%%:  155-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  156:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  156-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  157:    }
+    #####:  158:}
+    %%%%%:  158-block  0
+call    0 never executed
+    $$$$$:  158-block  1
+call    1 never executed
+        -:  159:
+function _ZN2UI14addToWatchlistEv called 0 returned 0% blocks executed 0%
+    #####:  160:void UI::addToWatchlist() {
+    #####:  161:    string title, genre, mainActor;
+    %%%%%:  161-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  162:    int year;
+    #####:  163:    cout << "Enter title: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  164:    cin >> title;
+    %%%%%:  164-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  165:    cout << "Enter genre: ";
+    %%%%%:  165-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  166:    cin >> genre;
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:    cout << "Enter year: ";
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  168:    cin >> year;
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  169:    cout << "Enter main actor: ";
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  170:    cin >> mainActor;
+    %%%%%:  170-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  171:    try {
+    #####:  172:        this->service.addToWatchlist(title, genre, year, mainActor);
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  173:    }
+    =====:  174:    catch (const RepositoryException &exception) {
+    $$$$$:  174-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  174-block  1
+call    2 never executed
+    =====:  175:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  175-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  176:    }
+    $$$$$:  176-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  176-block  1
+call    3 never executed
+    #####:  177:}
+    %%%%%:  177-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  177-block  1
+call    3 never executed
+    $$$$$:  177-block  2
+call    4 never executed
+    $$$$$:  177-block  3
+call    5 never executed
+        -:  178:
+function _ZN2UI19deleteFromWatchlistEv called 0 returned 0% blocks executed 0%
+    #####:  179:void UI::deleteFromWatchlist() {
+    #####:  180:    string denumire;
+    %%%%%:  180-block  0
+call    0 never executed
+    #####:  181:    cout << "Enter denumire: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  182:    cin >> denumire;
+    %%%%%:  182-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  183:    try {
+    #####:  184:        this->service.deleteFromWatchlist(denumire);
+    %%%%%:  184-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  185:    }
+    =====:  186:    catch (const RepositoryException &exception) {
+    $$$$$:  186-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  186-block  1
+call    2 never executed
+    =====:  187:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  187-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  188:    }
+    $$$$$:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  188-block  1
+call    3 never executed
+    #####:  189:}
+    %%%%%:  189-block  0
+call    0 never executed
+    $$$$$:  189-block  1
+call    1 never executed
+        -:  190:
+function _ZN2UI17generateWatchlistEv called 0 returned 0% blocks executed 0%
+    #####:  191:void UI::generateWatchlist() {
+        -:  192:    int numberOfOferte;
+    #####:  193:    cout << "Enter number of oferte: ";
+    %%%%%:  193-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  194:    cin >> numberOfOferte;
+    %%%%%:  194-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  195:    try {
+    #####:  196:        this->service.generateWatchlist(numberOfOferte);
+    %%%%%:  196-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  197:    }
+    =====:  198:    catch (const RepositoryException &exception) {
+    $$$$$:  198-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  198-block  1
+call    2 never executed
+    =====:  199:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  199-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  200:    }
+    $$$$$:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  200-block  1
+call    3 never executed
+    #####:  201:}
+    %%%%%:  201-block  0
+        -:  202:
+function _ZN2UI19saveWatchlistToFileEv called 0 returned 0% blocks executed 0%
+    #####:  203:void UI::saveWatchlistToFile() {
+    #####:  204:    string filename;
+    %%%%%:  204-block  0
+call    0 never executed
+    #####:  205:    cout << "Enter filename: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  206:    cin >> filename;
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  207:    try {
+    #####:  208:        this->service.saveWatchlistToFile(filename);
+    %%%%%:  208-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  209:    }
+    =====:  210:    catch (const RepositoryException &exception) {
+    $$$$$:  210-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  210-block  1
+call    2 never executed
+    =====:  211:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  211-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  212:    }
+    $$$$$:  212-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  212-block  1
+call    3 never executed
+    #####:  213:}
+    %%%%%:  213-block  0
+call    0 never executed
+    $$$$$:  213-block  1
+call    1 never executed
+        -:  214:
+function _ZN2UI14printWatchlistEv called 0 returned 0% blocks executed 0%
+    #####:  215:void UI::printWatchlist() {
+    #####:  216:    vector<Oferta> oferte = this->service.getWatchlist();
+    %%%%%:  216-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  217:    for (const Oferta& oferta : oferte) {
+    %%%%%:  217-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  217-block  1
+call    2 never executed
+    %%%%%:  217-block  2
+call    3 never executed
+    %%%%%:  217-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  218:        cout << oferta << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  218-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  219:    }
+    #####:  220:}
+    %%%%%:  220-block  0
+call    0 never executed
+    $$$$$:  220-block  1
+call    1 never executed
+        -:  221:
+function _ZN2UI4undoEv called 0 returned 0% blocks executed 0%
+    #####:  222:void UI::undo() {
+        -:  223:    try {
+    #####:  224:        this->service.doUndo();
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  225:    }
+    =====:  226:    catch (const RepositoryException &exception) {
+    $$$$$:  226-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  226-block  1
+call    2 never executed
+    =====:  227:        cout << exception << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  227-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  228:    }
+    $$$$$:  228-block  0
+call    0 never executed
+    $$$$$:  228-block  1
+call    1 never executed
+    #####:  229:}
+    %%%%%:  229-block  0
+        -:  230:
+function _ZN2UI3runEv called 0 returned 0% blocks executed 0%
+    #####:  231:void UI::run() {
+        -:  232:    while (true) {
+    #####:  233:        this->printMenu();
+    %%%%%:  233-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  234:        int command;
+    #####:  235:        cout << "Enter command: ";
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  236:        cin >> command;
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  237:        switch (command) {
+    %%%%%:  237-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:  238:            case 0:
+    #####:  239:                return;
+    %%%%%:  239-block  0
+    %%%%%:  239-block  1
+    #####:  240:            case 1:
+    #####:  241:                this->addOferta();
+    %%%%%:  241-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  242:                break;
+    %%%%%:  242-block  0
+    #####:  243:            case 2:
+    #####:  244:                this->removeOferta();
+    %%%%%:  244-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  245:                break;
+    %%%%%:  245-block  0
+    #####:  246:            case 3:
+    #####:  247:                this->updateOferta();
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  248:                break;
+    %%%%%:  248-block  0
+    #####:  249:            case 4:
+    #####:  250:                this->printAllOferte();
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  251:                break;
+    %%%%%:  251-block  0
+    #####:  252:            case 5:
+    #####:  253:                this->printOferteByDenumire();
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  254:                break;
+    %%%%%:  254-block  0
+    #####:  255:            case 6:
+    #####:  256:                this->printOferteByPret();
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  257:                break;
+    %%%%%:  257-block  0
+    #####:  258:            case 7:
+    #####:  259:                this->printSortedOferteByDenumire();
+    %%%%%:  259-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  260:                break;
+    %%%%%:  260-block  0
+    #####:  261:            case 8:
+    #####:  262:                this->printSortedOferteByDestinatie();
+    %%%%%:  262-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  263:                break;
+    %%%%%:  263-block  0
+    #####:  264:            case 9:
+    #####:  265:                this->printSortedOferteByPret();
+    %%%%%:  265-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  266:                break;
+    %%%%%:  266-block  0
+    #####:  267:            case 10:
+    #####:  268:                this->printSortedOferteByTip();
+    %%%%%:  268-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  269:                break;
+    %%%%%:  269-block  0
+    #####:  270:            case 11:
+    #####:  271:                this->addToWatchlist();
+    %%%%%:  271-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  272:                break;
+    %%%%%:  272-block  0
+    #####:  273:            case 12:
+    #####:  274:                this->deleteFromWatchlist();
+    %%%%%:  274-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  275:                break;
+    %%%%%:  275-block  0
+    #####:  276:            case 13:
+    #####:  277:                this->generateWatchlist();
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:                break;
+    %%%%%:  278-block  0
+    #####:  279:            case 14:
+    #####:  280:                this->saveWatchlistToFile();
+    %%%%%:  280-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  281:                break;
+    %%%%%:  281-block  0
+    #####:  282:            case 15:
+    #####:  283:                this->printWatchlist();
+    %%%%%:  283-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  284:                break;
+    %%%%%:  284-block  0
+    #####:  285:            case 16:
+    #####:  286:                this->undo();
+    %%%%%:  286-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  287:                break;
+    %%%%%:  287-block  0
+    #####:  288:            default:
+    #####:  289:                cout << "Invalid command!" << endl;
+    %%%%%:  289-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  289-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  290:                break;
+    %%%%%:  290-block  0
+        -:  291:        }
+    #####:  292:    }
+    %%%%%:  292-block  0
+        -:  293:}

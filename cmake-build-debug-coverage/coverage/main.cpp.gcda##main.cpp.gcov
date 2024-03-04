@@ -1,0 +1,133 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/main.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include <QtWidgets/QApplication>
+        -:    3:#include <QtWidgets/qboxlayout.h>
+        -:    4:#include <QtWidgets/qpushbutton.h>
+        -:    5:#include <QtWidgets/qlabel.h>
+        -:    6:#include <QtWidgets/qlineedit.h>
+        -:    7:#include <QtWidgets/qformlayout.h>
+        -:    8:#include <QtWidgets/qlistwidget.h>
+        -:    9:#include <vector>
+        -:   10:#include <string>
+        -:   11:
+        -:   12:#include "AbsRepo.h"
+        -:   13:#include "Tests.h"
+        -:   14:#include "Service.h"
+        -:   15:#include "OfertaGUI.h"
+        -:   16:
+        -:   17:using std::vector;
+        -:   18:using std::string;
+        -:   19:
+        -:   20:
+function main called 1 returned 100% blocks executed 61%
+        1:   21:int main(int argc, char* argv[])
+        -:   22:{
+        -:   23:
+        1:   24:    srand((unsigned)time(0));
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   24-block  1
+call    3 returned 1
+        -:   25:    Tests tests;
+        -:   26://    tests.testAll();
+        -:   27:
+        1:   28:    AbsRepo* repo = new OfertaRepoFile("../Persistence/oferte.csv");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   28-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   28-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   28-block  2
+call   10 returned 1
+call   11 returned 1
+    $$$$$:   28-block  3
+call   12 never executed
+    $$$$$:   28-block  4
+call   13 never executed
+    $$$$$:   28-block  5
+    $$$$$:   28-block  6
+call   14 never executed
+    $$$$$:   28-block  7
+        1:   29:    AbsRepo* repo1 = new OfertaRepo();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29-block  0
+call    3 returned 1
+        -:   30:    Validator validator;
+        1:   31:    Service service{repo, validator};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32:    QApplication a(argc, argv);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   33://    UI ui = UI(service);
+        -:   34://    ui.run();
+        -:   35:
+        1:   36:    OfertaGUI2 gui{ service };
+        1:   36-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   37:    gui.show();
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   38:
+        1:   39:    return a.exec();
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   39-block  1
+        1:   40:}
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   40-block  1
+call    3 never executed
+    $$$$$:   40-block  2
+call    4 never executed
+    $$$$$:   40-block  3
+call    5 never executed
+        -:   41://#include <iostream>
+        -:   42://#include "Tests.h"
+        -:   43://#include "UI.h"
+        -:   44://
+        -:   45://
+        -:   46://using namespace std;
+        -:   47://
+        -:   48://int main() {
+        -:   49://
+        -:   50://    Tests tests;
+        -:   51://    tests.testAll();
+        -:   52://
+        -:   53://    AbsRepo* repo = new OfertaRepoFile("../Persistence/oferte.csv");
+        -:   54://    AbsRepo* repo1 = new OfertaRepo();
+        -:   55://    Validator validator;
+        -:   56://    Service service(repo, validator);
+        -:   57://
+        -:   58://    UI ui = UI(service);
+        -:   59://    ui.run();
+        -:   60://
+        -:   61://    delete repo;
+        -:   62://    delete repo1;
+        -:   63://    return 0;
+        -:   64://}

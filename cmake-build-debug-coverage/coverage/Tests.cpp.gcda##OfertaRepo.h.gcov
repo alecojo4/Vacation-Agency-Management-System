@@ -1,0 +1,46 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/OfertaRepo.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Tests.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LABORATOR8_9OOP_OFERTAREPO_H
+        -:    6:#define LABORATOR8_9OOP_OFERTAREPO_H
+        -:    7:#pragma once
+        -:    8:
+        -:    9:#include "Oferta.h"
+        -:   10:#include "Exceptions.h"
+        -:   11:#include "AbsRepo.h"
+        -:   12:#include <vector>
+        -:   13:
+        -:   14:using namespace std;
+        -:   15:
+        -:   16:class OfertaRepo: public AbsRepo {
+        -:   17:
+        -:   18:public:
+function _ZN10OfertaRepoC1Ev called 0 returned 0% blocks executed 0%
+    #####:   19:    OfertaRepo() = default;
+    %%%%%:   19-block  0
+call    0 never executed
+        -:   20:
+        -:   21:     ~OfertaRepo() override;
+        -:   22:
+        -:   23:     void add(const Oferta &oferta) override;
+        -:   24:
+        -:   25:     void remove(const Oferta &oferta) override;
+        -:   26:
+        -:   27:     void update(const Oferta &oferta) override;
+        -:   28:
+        -:   29:     const vector<Oferta> &getAll() const override;
+        -:   30:
+        -:   31:     int size() const override;
+        -:   32:
+        -:   33:     const Oferta &getOferta(int index) const override;
+        -:   34:
+        -:   35:     int find(const Oferta &oferta) const override;
+        -:   36:
+        -:   37:
+        -:   38:};
+        -:   39:#endif //LABORATOR8_9OOP_OFERTAREPO_H

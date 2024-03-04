@@ -1,0 +1,37 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Exceptions.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LABORATOR8_9OOP_EXCEPTIONS_H
+        -:    6:#define LABORATOR8_9OOP_EXCEPTIONS_H
+        -:    7:
+        -:    8:#pragma once
+        -:    9:#include <string>
+        -:   10:#include <utility>
+        -:   11:
+        -:   12:class ValidationException {
+        -:   13:private:
+        -:   14:    std::string message;
+        -:   15:public:
+        -:   16:    ValidationException(std::string message) : message{std::move(message)} {}
+        -:   17:    friend std::ostream &operator<<(std::ostream &os, const ValidationException &exception);
+        -:   18:};
+        -:   19:
+        -:   20:class RepositoryException {
+        -:   21:private:
+        -:   22:    std::string message;
+        -:   23:public:
+function _ZN19RepositoryExceptionC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   24:    RepositoryException(std::string message) : message{std::move(message)} {}
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+        -:   25:
+        -:   26:    friend std::ostream &operator<<(std::ostream &os, const RepositoryException &exception);
+        -:   27:
+        -:   28:};
+        -:   29:#endif //LABORATOR8_9OOP_EXCEPTIONS_H

@@ -1,0 +1,459 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/OfertaRepoFile.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\OfertaRepoFile.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "OfertaRepoFile.h"
+        -:    6:#include <sstream>
+        -:    7:
+function _ZN14OfertaRepoFile12loadFromFileEv called 1 returned 100% blocks executed 58%
+        1:    8:void OfertaRepoFile::loadFromFile() {
+        1:    9:    ifstream fin(this->filename);
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   10:    if (!fin.is_open()) {
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   10-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    #####:   11:        throw RepositoryException("File could not be opened!");
+    %%%%%:   11-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   11-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   11-block  2
+call    9 never executed
+    $$$$$:   11-block  3
+    $$$$$:   11-block  4
+call   10 never executed
+        -:   12:    }
+        -:   13:    //Clear the vector
+        1:   14:    this->oferte.clear();
+        1:   14-block  0
+call    0 returned 1
+        1:   15:    string line;
+call    0 returned 1
+        3:   16:    while (getline(fin, line)) {
+        3:   16-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   16-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   16-block  2
+branch  6 taken 2
+branch  7 taken 1 (fallthrough)
+        2:   17:        stringstream ss(line);
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   18:        //Se citesc liniile din fișier și se tokenizează fiecare linie într-un vector de string-uri separate prin virgulă.
+        -:   19:        // Variabila "line" conține linia curentă din fișier, iar variabila "ss" este un obiect de tip "stringstream" care permite citirea și manipularea string-urilor.
+        -:   20:        // În cadrul buclei interne, fiecare linie este împărțită într-un vector de token-uri separate prin virgulă.
+        2:   21:        vector<string> tokens;
+        2:   21-block  0
+call    0 returned 2
+        2:   22:        string token;
+call    0 returned 2
+       10:   23:        while (getline(ss, token, ',')) {
+       10:   23-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   23-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:   23-block  2
+branch  6 taken 8
+branch  7 taken 2 (fallthrough)
+        8:   24:            tokens.push_back(token);
+        8:   24-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   25:        }
+       2*:   26:        if (tokens.size() != 4) {
+        2:   26-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:   27:            continue;
+    %%%%%:   27-block  0
+        -:   28:        }
+        2:   29:        string denumire = tokens[0];
+        2:   29-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   30:        string destinatie = tokens[1];
+        2:   30-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   31:        int pret = stoi(tokens[2]);
+        2:   31-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   32:        string tip = tokens[3];
+        2:   32-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   33:        Oferta oferta(denumire, destinatie, pret, tip);
+        2:   33-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   34:        this->oferte.push_back(oferta);
+        2:   34-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   35:    }
+        2:   35-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        2:   35-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0
+        2:   35-block  2
+        2:   35-block  3
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0
+        2:   35-block  4
+        2:   35-block  5
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0
+    $$$$$:   35-block  6
+call   13 never executed
+    $$$$$:   35-block  7
+call   14 never executed
+    $$$$$:   35-block  8
+call   15 never executed
+    $$$$$:   35-block  9
+call   16 never executed
+    $$$$$:   35-block 10
+call   17 never executed
+    $$$$$:   35-block 11
+call   18 never executed
+    $$$$$:   35-block 12
+call   19 never executed
+        1:   36:}
+        1:   36-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   36-block  1
+call    2 never executed
+    $$$$$:   36-block  2
+call    3 never executed
+        -:   37:
+function _ZN14OfertaRepoFileC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 67%
+        1:   38:OfertaRepoFile::OfertaRepoFile(const string &filename) {
+        1:   38-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   39:    this->filename = filename;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40:    this->loadFromFile();
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   41:}
+        1:   41-block  0
+    $$$$$:   41-block  1
+call    0 never executed
+    $$$$$:   41-block  2
+call    1 never executed
+        -:   42:
+function _ZN14OfertaRepoFile11writeToFileEv called 0 returned 0% blocks executed 0%
+    #####:   43:void OfertaRepoFile::writeToFile() {
+    #####:   44:    ofstream fout(this->filename);
+    %%%%%:   44-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   45:    if (!fout.is_open()) {
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   45-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:   46:        throw RepositoryException("File could not be opened!");
+    %%%%%:   46-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   46-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   46-block  2
+call    9 never executed
+    $$$$$:   46-block  3
+    $$$$$:   46-block  4
+call   10 never executed
+        -:   47:    }
+    #####:   48:    for (const auto &oferta : this->oferte) {
+    %%%%%:   48-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   48-block  1
+call    2 never executed
+    %%%%%:   48-block  2
+call    3 never executed
+    %%%%%:   48-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   49:        fout << oferta << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   49-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   50:    }
+    #####:   51:}
+    %%%%%:   51-block  0
+call    0 never executed
+    $$$$$:   51-block  1
+call    1 never executed
+        -:   52:
+function _ZN14OfertaRepoFile3addERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   53:void OfertaRepoFile::add(const Oferta &oferta) {
+    #####:   54:    this->loadFromFile();
+    %%%%%:   54-block  0
+call    0 never executed
+    #####:   55:    if (this->find(oferta) != -1)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   56:        throw RepositoryException("Oferta deja exista!");
+    %%%%%:   56-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   56-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   56-block  2
+call    9 never executed
+    $$$$$:   56-block  3
+    $$$$$:   56-block  4
+call   10 never executed
+    #####:   57:    this->oferte.push_back(oferta);
+    %%%%%:   57-block  0
+call    0 never executed
+    #####:   58:    this->writeToFile();
+call    0 never executed
+    #####:   59:    this->loadFromFile();
+call    0 never executed
+    #####:   60:}
+        -:   61:
+function _ZN14OfertaRepoFile6removeERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   62:void OfertaRepoFile::remove(const Oferta &oferta) {
+    #####:   63:    this->loadFromFile();
+    %%%%%:   63-block  0
+call    0 never executed
+    #####:   64:    int index = this->find(oferta);
+call    0 never executed
+    #####:   65:    if (index == -1)
+branch  0 never executed
+branch  1 never executed
+    #####:   66:        throw RepositoryException("Oferta nu exista!");
+    %%%%%:   66-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   66-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   66-block  2
+call    9 never executed
+    $$$$$:   66-block  3
+    $$$$$:   66-block  4
+call   10 never executed
+    #####:   67:    this->oferte.erase(this->oferte.begin() + index);
+    %%%%%:   67-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   67-block  1
+    $$$$$:   67-block  2
+    #####:   68:    this->writeToFile();
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:    this->loadFromFile();
+call    0 never executed
+    #####:   70:}
+        -:   71:
+function _ZN14OfertaRepoFile6updateERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   72:void OfertaRepoFile::update(const Oferta &oferta) {
+    #####:   73:    this->loadFromFile();
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:    int index = this->find(oferta);
+call    0 never executed
+    #####:   75:    if (index == -1)
+branch  0 never executed
+branch  1 never executed
+    #####:   76:        throw RepositoryException("Oferta nu exista!");
+    %%%%%:   76-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   76-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   76-block  2
+call    9 never executed
+    $$$$$:   76-block  3
+    $$$$$:   76-block  4
+call   10 never executed
+    #####:   77:    this->oferte[index] = oferta;
+    %%%%%:   77-block  0
+call    0 never executed
+call    1 never executed
+    #####:   78:    this->writeToFile();
+call    0 never executed
+    #####:   79:    this->loadFromFile();
+call    0 never executed
+    #####:   80:}
+        -:   81:
+    #####:   82:OfertaRepoFile::~OfertaRepoFile() {
+        -:   83://    this->writeToFile();
+        -:   84://    this->movies.clear();
+    #####:   85:}
+------------------
+_ZN14OfertaRepoFileD0Ev:
+function _ZN14OfertaRepoFileD0Ev called 0 returned 0% blocks executed 0%
+    #####:   82:OfertaRepoFile::~OfertaRepoFile() {
+        -:   83://    this->writeToFile();
+        -:   84://    this->movies.clear();
+    #####:   85:}
+    %%%%%:   85-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN14OfertaRepoFileD2Ev:
+function _ZN14OfertaRepoFileD2Ev called 0 returned 0% blocks executed 0%
+    #####:   82:OfertaRepoFile::~OfertaRepoFile() {
+        -:   83://    this->writeToFile();
+        -:   84://    this->movies.clear();
+    #####:   85:}
+    %%%%%:   85-block  0
+call    0 never executed
+call    1 never executed
+------------------
+        -:   86:
+function _ZNK14OfertaRepoFile6getAllEv called 2 returned 100% blocks executed 100%
+        2:   87:const vector<Oferta> &OfertaRepoFile::getAll() const {
+        2:   88:    return this->oferte;
+        2:   88-block  0
+        -:   89:}
+        -:   90:
+function _ZNK14OfertaRepoFile4sizeEv called 0 returned 0% blocks executed 0%
+    #####:   91:int OfertaRepoFile::size() const {
+    #####:   92:    return this->oferte.size();
+    %%%%%:   92-block  0
+call    0 never executed
+        -:   93:}
+        -:   94:
+function _ZNK14OfertaRepoFile9getOfertaEi called 0 returned 0% blocks executed 0%
+    #####:   95:const Oferta &OfertaRepoFile::getOferta(int index) const {
+    #####:   96:    return this->oferte[index];
+    %%%%%:   96-block  0
+call    0 never executed
+        -:   97:}
+        -:   98:
+function _ZNK14OfertaRepoFile4findERK6Oferta called 0 returned 0% blocks executed 0%
+    #####:   99:int OfertaRepoFile::find(const Oferta &oferta) const {
+    #####:  100:    for (int i = 0; i < this->oferte.size(); i++) {
+    %%%%%:  100-block  0
+    %%%%%:  100-block  1
+    %%%%%:  100-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  101:        if (this->oferte[i] == oferta)
+    %%%%%:  101-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  102:            return i;
+    %%%%%:  102-block  0
+        -:  103:    }
+    #####:  104:    return -1;
+    %%%%%:  104-block  0
+        -:  105:}
+        -:  106:
+function _ZN14OfertaRepoFileC2Ev called 0 returned 0% blocks executed 0%
+    #####:  107:OfertaRepoFile::OfertaRepoFile() {
+    %%%%%:  107-block  0
+call    0 never executed
+call    1 never executed
+    #####:  108:    this->filename = "";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  109:}
+    %%%%%:  109-block  0
+    $$$$$:  109-block  1
+call    0 never executed
+    $$$$$:  109-block  2
+call    1 never executed

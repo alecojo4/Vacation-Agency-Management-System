@@ -1,0 +1,72 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Oferta.h
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LABORATOR8_9OOP_OFERTA_H
+        -:    6:#define LABORATOR8_9OOP_OFERTA_H
+        -:    7:#pragma once
+        -:    8:
+        -:    9:#include <string>
+        -:   10:#include <iostream>
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:class Oferta {
+        -:   15:private :
+        -:   16:    string denumire;
+        -:   17:    string destinatie;
+        -:   18:    int pret;
+        -:   19:    string tip;
+        -:   20:
+        -:   21:public:
+        -:   22:    Oferta() = default;
+        -:   23:
+        -:   24:    Oferta(const string &denumire, const string &destinatie, int pret, const string &tip);
+        -:   25:
+        -:   26:    Oferta(const Oferta &oferta);
+        -:   27:
+        -:   28:    Oferta &operator=(const Oferta &oferta);
+        -:   29:
+        -:   30:    //Rule of 5
+function _ZN6OfertaD1Ev called 0 returned 0% blocks executed 0%
+    #####:   31:    ~Oferta() = default;
+    %%%%%:   31-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   32:
+        -:   33:    Oferta(Oferta &&oferta) noexcept;
+        -:   34:
+        -:   35:    Oferta &operator=(Oferta &&oferta) noexcept;
+        -:   36:
+        -:   37:    string getDenumire() const;
+        -:   38:
+        -:   39:    void setDenumire(const string &ofertaTitle);
+        -:   40:
+        -:   41:    string getDestinatie() const;
+        -:   42:
+        -:   43:    void setDestinatie(const string &destinatie);
+        -:   44:
+        -:   45:    int getPret() const;
+        -:   46:
+        -:   47:    void setPret(int ofertaPret);
+        -:   48:
+        -:   49:    string getTip() const;
+        -:   50:
+        -:   51:    void setTip(const string &ofertaTip);
+        -:   52:
+        -:   53:    bool operator==(const Oferta &rhs) const;
+        -:   54:
+        -:   55:    bool operator!=(const Oferta &rhs) const;
+        -:   56:
+        -:   57:    string toString();
+        -:   58:
+        -:   59:    friend ostream &operator<<(ostream &os, const Oferta &oferta);
+        -:   60:
+        -:   61:    friend istream &operator>>(istream &is, Oferta &oferta);
+        -:   62:};
+        -:   63:#endif //LABORATOR8_9OOP_OFERTA_H

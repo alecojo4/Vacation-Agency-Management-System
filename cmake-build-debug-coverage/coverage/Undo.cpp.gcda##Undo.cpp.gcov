@@ -1,0 +1,32 @@
+        -:    0:Source:C:/Users/Ale/CLionProjects/labQTFinal/Undo.cpp
+        -:    0:Graph:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcno
+        -:    0:Data:C:\Users\Ale\CLionProjects\labQTFinal\cmake-build-debug-coverage\CMakeFiles\labQTFinal.dir\Undo.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Ale on 5/2/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "Undo.h"
+        -:    6:
+function _ZN10UndoAdauga4undoEv called 0 returned 0% blocks executed 0%
+    #####:    7:void UndoAdauga::undo() {
+    #####:    8:    this->repo.remove(this->oferta);
+    %%%%%:    8-block  0
+call    0 never executed
+    #####:    9:}
+        -:   10:
+        -:   11:
+function _ZN10UndoSterge4undoEv called 0 returned 0% blocks executed 0%
+    #####:   12:void UndoSterge::undo() {
+    #####:   13:    this->repo.add(this->oferta);
+    %%%%%:   13-block  0
+call    0 never executed
+    #####:   14:}
+        -:   15:
+        -:   16:
+function _ZN12UndoModifica4undoEv called 0 returned 0% blocks executed 0%
+    #####:   17:void UndoModifica::undo() {
+    #####:   18:    this->repo.update(this->oferta);
+    %%%%%:   18-block  0
+call    0 never executed
+    #####:   19:}
